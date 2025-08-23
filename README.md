@@ -84,9 +84,9 @@ This repository is designed to be a living resource. When using techniques from 
 ```
 @misc{prompting-gold-standard,
   title={Prompting-Gold-Standard: Advanced Prompt Engineering for LLMs},
-  author={Community Contributors},
-  year={2024},
-  url={https://github.com/yourusername/prompting-gold-standard}
+  author={llMr-Sweetll and Community Contributors},
+  year={2025},
+  url={https://github.com/llMr-Sweetll/Prompting-Gold-Standard}
 }
 ```
 
@@ -100,8 +100,10 @@ This work is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) f
 
 ## 🔗 Related Resources
 
-- [OpenAI GPT-5 Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
-- [Anthropic Claude 4.1 Prompting Best Practices](https://docs.anthropic.com/claude/prompt-library)
+- [OpenAI GPT-5 Official Documentation](https://platform.openai.com/docs/models/gpt-5)
+- [OpenAI GPT-5 Prompting Guide](https://platform.openai.com/docs/guides/gpt-5-prompting)
+- [Anthropic Claude Opus 4.1 Documentation](https://docs.anthropic.com/claude/docs/claude-opus-4-1)
+- [Anthropic Claude Opus 4.1 Prompting Guide](https://docs.anthropic.com/claude/docs/opus-4-1-prompting)
 - [Google Gemini Advanced Prompting](https://aistudio.google.com/app/prompts)
 - [XAI Grok Model Capabilities](https://x.ai/grok/)
 - [Chinese AI Models Guide](https://github.com/THUDM/ChatGLM-6B)

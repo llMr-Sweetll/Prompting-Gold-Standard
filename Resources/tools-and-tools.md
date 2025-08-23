@@ -10,11 +10,11 @@ This comprehensive guide covers the essential tools, platforms, and frameworks f
 **Platform**: [OpenAI Platform](https://platform.openai.com/)
 **Models**: GPT-5, GPT-4-turbo (legacy support)
 **Key Features**:
-- Advanced reasoning capabilities with GPT-5
+- Advanced reasoning capabilities with GPT-5 (released August 2025)
 - Enhanced multimodal processing (text, images, code)
 - Advanced function calling and structured outputs
 - Fine-tuning capabilities for custom models
-- Comprehensive API documentation
+- Comprehensive API documentation at [GPT-5 Docs](https://platform.openai.com/docs/models/gpt-5)
 - Context window up to 128K tokens
 
 **Prompting Strengths**:
@@ -32,13 +32,14 @@ This comprehensive guide covers the essential tools, platforms, and frameworks f
 - Advanced data analysis and interpretation
 
 **Pricing**: Pay-per-use based on tokens
+**Official Documentation**: [GPT-5 Prompting Guide](https://platform.openai.com/docs/guides/gpt-5-prompting)
 
 ### 2. Anthropic Claude
 **Platform**: [Anthropic Console](https://console.anthropic.com/)
-**Models**: Claude 4.1 Opus, Claude 4.1 Sonnet, Claude 3.5 Haiku, Claude 3 Opus
+**Models**: Claude Opus 4.1, Claude 4.1 Sonnet, Claude 3.5 Haiku, Claude 3 Opus
 **Key Features**:
 - Advanced constitutional AI approach with enhanced safety
-- Context windows up to 500K tokens (4.1 series)
+- Context windows up to 500K tokens (4.1 series, released August 2025)
 - Multimodal capabilities (text, images, documents)
 - Advanced agentic capabilities with tool use
 - Enhanced reasoning and analysis features
@@ -61,6 +62,8 @@ This comprehensive guide covers the essential tools, platforms, and frameworks f
 - Multi-step reasoning and analysis tasks
 
 **Pricing**: Pay-per-use based on tokens
+**Official Documentation**: [Claude Opus 4.1 Documentation](https://docs.anthropic.com/claude/docs/claude-opus-4-1)
+**Prompting Guide**: [Opus 4.1 Prompting Best Practices](https://docs.anthropic.com/claude/docs/opus-4-1-prompting)
 
 ### 3. Google Gemini
 **Platform**: [Google AI Studio](https://aistudio.google.com/)
