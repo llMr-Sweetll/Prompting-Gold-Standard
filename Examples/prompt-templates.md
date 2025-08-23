@@ -999,4 +999,1269 @@ Create a comprehensive policy document:
 - **User Feedback:** Collect and incorporate user feedback
 - **Performance Metrics:** Track success rates and areas for improvement
 
+## R&D and Prototyping Templates
+
+### 1. Innovation Ideation
+```
+**Template: Innovation Brainstorming Session**
+
+You are an innovation consultant facilitating a brainstorming session for new product development. Generate creative and feasible ideas for the following challenge:
+
+**Challenge:** [Specific problem or opportunity]
+**Industry:** [Target industry or market]
+**Constraints:** [Technical, budget, time, or resource limitations]
+**Target Users:** [Primary user group or customer segment]
+
+**Ideation Framework:**
+
+1. **Problem Analysis**
+   - Current pain points and challenges
+   - Market gaps and opportunities
+   - User needs and preferences
+   - Competitive landscape analysis
+
+2. **Solution Categories**
+   - **Incremental Innovations:** Small improvements to existing solutions
+   - **Adjacent Innovations:** New applications of existing technologies
+   - **Radical Innovations:** Completely new approaches or technologies
+   - **Architectural Innovations:** New ways of combining existing components
+
+3. **Idea Generation**
+   Generate 10-15 specific ideas, each including:
+   - **Concept Description:** Clear explanation of the idea
+   - **Value Proposition:** Key benefits for users
+   - **Technical Feasibility:** Required technology and resources
+   - **Market Potential:** Target market size and opportunity
+   - **Implementation Complexity:** Development effort required
+
+4. **Evaluation Criteria**
+   For each idea, assess:
+   - **Feasibility Score (1-10):** Technical and practical viability
+   - **Impact Score (1-10):** Potential market or user impact
+   - **Novelty Score (1-10):** Uniqueness and differentiation
+   - **Resource Score (1-10):** Alignment with available resources
+
+**Output Requirements:**
+- Present ideas in a structured format
+- Include visual concepts or analogies where helpful
+- Provide preliminary prototyping suggestions
+- Identify potential partnerships or collaborations
+```
+
+### 2. Prototype Development Planning
+```
+**Template: Prototype Development Strategy**
+
+Develop a comprehensive prototyping strategy for the following concept:
+
+**Concept:** [Product or service idea]
+**Development Stage:** [Ideation, validation, development, testing]
+**Available Resources:** [Team size, budget, timeline, technology access]
+**Success Metrics:** [Key performance indicators]
+
+**Prototyping Strategy Components:**
+
+1. **Objective Definition**
+   - Primary learning objectives
+   - Key assumptions to test
+   - Success criteria for each prototype iteration
+   - Risk mitigation goals
+
+2. **Prototype Types Selection**
+   Choose appropriate prototype levels:
+   - **Low-Fidelity:** Paper sketches, wireframes, mockups
+   - **Medium-Fidelity:** Interactive prototypes, basic functionality
+   - **High-Fidelity:** Near-production quality prototypes
+   - **Production Prototype:** Market-ready version
+
+3. **Development Roadmap**
+   **Phase 1: Concept Validation (Week 1-2)**
+   - Activities and deliverables
+   - Required resources and tools
+   - User feedback collection methods
+
+   **Phase 2: Functional Testing (Week 3-4)**
+   - Core feature development
+   - Technical feasibility assessment
+   - Performance and usability testing
+
+   **Phase 3: User Validation (Week 5-6)**
+   - User testing sessions
+   - Feedback analysis and iteration
+   - Feature prioritization
+
+   **Phase 4: Refinement (Week 7-8)**
+   - Final adjustments and optimizations
+   - Documentation and knowledge transfer
+   - Handover preparation
+
+4. **Resource Planning**
+   - **Team Requirements:** Specific skills and roles needed
+   - **Technology Stack:** Tools, frameworks, and platforms
+   - **Budget Allocation:** Cost breakdown by phase
+   - **Timeline Dependencies:** Critical path and milestones
+
+5. **Risk Management**
+   - **Technical Risks:** Technology limitations, integration challenges
+   - **Resource Risks:** Budget overruns, team capacity issues
+   - **Market Risks:** User acceptance, competitive responses
+   - **Mitigation Strategies:** Contingency plans and alternatives
+
+**Requirements:**
+- Include specific prototyping tools and methodologies
+- Provide cost estimates and resource requirements
+- Define clear success criteria for each phase
+- Include contingency planning for potential setbacks
+```
+
+### 3. Technical Feasibility Analysis
+```
+**Template: Technical Feasibility Assessment**
+
+Conduct a comprehensive technical feasibility analysis for the following innovation:
+
+**Innovation:** [Product, service, or process description]
+**Technical Domain:** [AI, robotics, biotechnology, materials science, etc.]
+**Current Technology Level:** [Existing capabilities and limitations]
+**Target Performance Requirements:** [Specific technical goals]
+
+**Feasibility Analysis Framework:**
+
+1. **Technical Requirements Analysis**
+   - **Core Functionality:** Essential features and capabilities
+   - **Performance Specifications:** Speed, accuracy, reliability requirements
+   - **Integration Requirements:** Compatibility with existing systems
+   - **Scalability Needs:** Growth and expansion capabilities
+
+2. **Technology Assessment**
+   **Current State Analysis:**
+   - Available technologies and tools
+   - Known technical limitations
+   - Research and development progress
+   - Industry standards and best practices
+
+   **Gap Analysis:**
+   - Technology gaps requiring new development
+   - Research needs and challenges
+   - Expertise requirements
+   - Development timeline estimates
+
+3. **Resource Requirements**
+   **Development Resources:**
+   - Specialized equipment and tools
+   - Research facilities and laboratories
+   - Software and development environments
+   - Testing and validation systems
+
+   **Human Resources:**
+   - Required technical expertise
+   - Team composition and skills
+   - Training and knowledge transfer needs
+   - External consultant requirements
+
+4. **Risk Assessment**
+   **Technical Risks:**
+   - Technology maturity issues
+   - Integration and compatibility problems
+   - Performance and reliability concerns
+   - Security and safety considerations
+
+   **Development Risks:**
+   - Timeline delays and overruns
+   - Cost escalation factors
+   - Resource availability issues
+   - Knowledge and expertise gaps
+
+5. **Alternative Approaches**
+   **Primary Approach:**
+   - Technical strategy and methodology
+   - Development timeline and milestones
+   - Resource requirements and allocation
+   - Success probability assessment
+
+   **Alternative Approaches:**
+   - Backup technical strategies
+   - Different technology combinations
+   - Phased implementation options
+   - Risk mitigation alternatives
+
+**Deliverables:**
+- Detailed feasibility report
+- Technology roadmap
+- Risk mitigation strategies
+- Resource requirement specifications
+- Alternative development paths
+```
+
+### 4. R&D Experiment Design
+```
+**Template: R&D Experiment Design**
+
+Design a comprehensive R&D experiment to test the following hypothesis:
+
+**Research Hypothesis:** [Specific hypothesis to test]
+**Experimental Domain:** [AI, materials, pharmaceuticals, etc.]
+**Available Resources:** [Equipment, data, funding, personnel]
+**Timeline:** [Experiment duration and milestones]
+
+**Experiment Design Components:**
+
+1. **Hypothesis Refinement**
+   - Clear, testable hypothesis statement
+   - Dependent and independent variables
+   - Expected outcomes and success criteria
+   - Alternative hypotheses to consider
+
+2. **Experimental Methodology**
+   **Research Design:**
+   - Experimental, quasi-experimental, or observational
+   - Control and treatment groups
+   - Randomization procedures
+   - Blinding and bias control methods
+
+   **Data Collection:**
+   - Measurement instruments and tools
+   - Data collection procedures and protocols
+   - Sampling methodology and size justification
+   - Data quality control measures
+
+3. **Variables and Controls**
+   **Independent Variables:**
+   - Variable definitions and manipulation methods
+   - Treatment conditions and levels
+   - Implementation procedures
+
+   **Dependent Variables:**
+   - Measurement definitions and scales
+   - Data collection timing and frequency
+   - Reliability and validity considerations
+
+   **Control Variables:**
+   - Confounding variables identification
+   - Control procedures and methods
+   - Environmental control requirements
+
+4. **Data Analysis Plan**
+   **Statistical Methods:**
+   - Primary analysis techniques
+   - Power analysis and sample size justification
+   - Statistical software and tools
+   - Data transformation requirements
+
+   **Analytical Procedures:**
+   - Data cleaning and preprocessing steps
+   - Exploratory data analysis methods
+   - Hypothesis testing procedures
+   - Effect size calculations
+
+5. **Ethical and Safety Considerations**
+   **Research Ethics:**
+   - Institutional review board requirements
+   - Informed consent procedures
+   - Participant protection measures
+   - Data privacy and confidentiality
+
+   **Safety Protocols:**
+   - Physical safety considerations
+   - Chemical or biological safety measures
+   - Equipment safety procedures
+   - Emergency response protocols
+
+**Requirements:**
+- Include detailed protocols and procedures
+- Specify equipment and material requirements
+- Provide cost estimates and budget breakdown
+- Include quality control and validation methods
+- Define clear success criteria and metrics
+```
+
+## Market Research and Analysis Templates
+
+### 1. Market Survey Design
+```
+**Template: Comprehensive Market Survey Design**
+
+Design a comprehensive market survey for the following research objective:
+
+**Research Objective:** [Specific market question or hypothesis]
+**Target Market:** [Industry, geographic region, customer segment]
+**Survey Budget:** [Available budget for survey implementation]
+**Timeline:** [Survey duration and key milestones]
+
+**Survey Design Framework:**
+
+1. **Research Question Development**
+   - Primary research questions
+   - Secondary objectives
+   - Key performance indicators
+   - Success metrics definition
+
+2. **Target Population Definition**
+   **Population Characteristics:**
+   - Demographic profile (age, gender, income, education)
+   - Geographic distribution
+   - Industry or sector focus
+   - Role or position specifications
+
+   **Sampling Strategy:**
+   - Sampling method (probability, non-probability)
+   - Sample size determination
+   - Sampling frame definition
+   - Response rate expectations
+
+3. **Survey Instrument Design**
+   **Question Types:**
+   - Demographic questions
+   - Likert scale questions
+   - Ranking and rating questions
+   - Open-ended questions
+   - Matrix questions
+
+   **Question Structure:**
+   - Logical flow and progression
+   - Question wording and clarity
+   - Response option design
+   - Skip logic and branching
+
+4. **Data Collection Methodology**
+   **Distribution Channels:**
+   - Online survey platforms
+   - Email distribution lists
+   - Social media recruitment
+   - Professional network outreach
+
+   **Incentive Structure:**
+   - Participation incentives
+   - Incentive distribution methods
+   - Ethical considerations
+   - Budget implications
+
+5. **Quality Control Measures**
+   **Data Quality:**
+   - Response validation rules
+   - Attention check questions
+   - Data cleaning procedures
+   - Outlier identification methods
+
+   **Response Quality:**
+   - Speeding detection
+   - Pattern analysis
+   - Data consistency checks
+   - Follow-up procedures
+
+**Requirements:**
+- Include survey length optimization
+- Provide question wording guidelines
+- Specify data analysis procedures
+- Include pilot testing recommendations
+- Provide cost and timeline estimates
+```
+
+### 2. Competitive Analysis Framework
+```
+**Template: Competitive Intelligence Analysis**
+
+Conduct a comprehensive competitive analysis for the following market:
+
+**Target Market:** [Specific market or industry segment]
+**Company/Product:** [Your product or company]
+**Competitive Scope:** [Direct, indirect, potential competitors]
+**Analysis Depth:** [Basic, intermediate, comprehensive]
+
+**Competitive Analysis Framework:**
+
+1. **Market Overview**
+   **Market Structure:**
+   - Total market size and growth rate
+   - Market segmentation and sub-segments
+   - Key market drivers and trends
+   - Regulatory and environmental factors
+
+   **Industry Dynamics:**
+   - Porter's Five Forces analysis
+   - Market concentration ratios
+   - Entry and exit barriers
+   - Technology disruption factors
+
+2. **Competitor Identification**
+   **Direct Competitors:**
+   - Primary competitors in same market segment
+   - Product feature comparison
+   - Pricing and positioning analysis
+   - Market share distribution
+
+   **Indirect Competitors:**
+   - Alternative solution providers
+   - Substitute products or services
+   - Emerging competitors
+   - Potential market entrants
+
+3. **Competitor Profiling**
+   For each major competitor, analyze:
+   - **Company Overview:** Size, history, financial performance
+   - **Product Portfolio:** Key products and features
+   - **Pricing Strategy:** Pricing models and discount structures
+   - **Distribution Channels:** Sales and distribution methods
+   - **Marketing Strategy:** Brand positioning and messaging
+   - **Customer Segments:** Target markets and customer profiles
+   - **Strengths and Weaknesses:** SWOT analysis
+   - **Recent Developments:** New products, partnerships, acquisitions
+
+4. **Competitive Positioning**
+   **Market Positioning Map:**
+   - Price vs. quality positioning
+   - Feature differentiation analysis
+   - Brand perception mapping
+   - Customer value proposition comparison
+
+   **Competitive Advantages:**
+   - Cost advantages
+   - Technology advantages
+   - Brand advantages
+   - Operational advantages
+
+5. **Strategic Implications**
+   **Threat Assessment:**
+   - Immediate competitive threats
+   - Emerging competitive challenges
+   - Market share erosion risks
+   - New entrant threats
+
+   **Strategic Opportunities:**
+   - Market gaps and underserved segments
+   - Competitive weaknesses to exploit
+   - Partnership and alliance opportunities
+   - Innovation and differentiation areas
+
+**Requirements:**
+- Include data sources and research methods
+- Provide visual analysis frameworks
+- Include actionable strategic recommendations
+- Update frequency and monitoring procedures
+```
+
+### 3. Customer Journey Mapping
+```
+**Template: Customer Journey Analysis and Optimization**
+
+Create a comprehensive customer journey map for the following scenario:
+
+**Customer Persona:** [Target customer profile]
+**Product/Service:** [Your product or service offering]
+**Customer Goal:** [What the customer is trying to achieve]
+**Touchpoint Channels:** [Digital, physical, customer service, etc.]
+
+**Customer Journey Framework:**
+
+1. **Customer Persona Development**
+   **Demographic Information:**
+   - Age, gender, location, income level
+   - Education and professional background
+   - Technology adoption level
+   - Cultural and social factors
+
+   **Psychographic Profile:**
+   - Values, attitudes, and beliefs
+   - Lifestyle and interests
+   - Pain points and motivations
+   - Decision-making criteria
+
+2. **Journey Stage Analysis**
+   **Awareness Stage:**
+   - How customers discover needs
+   - Information sources and channels
+   - Key messages and content types
+   - Brand touchpoints and impressions
+
+   **Consideration Stage:**
+   - Research and evaluation processes
+   - Comparison criteria and methods
+   - Influencer and peer impacts
+   - Content and information needs
+
+   **Purchase Stage:**
+   - Decision-making triggers
+   - Purchase process and friction points
+   - Payment and fulfillment experiences
+   - Post-purchase communication
+
+   **Retention Stage:**
+   - Onboarding and adoption processes
+   - Usage and engagement patterns
+   - Support and service needs
+   - Loyalty and advocacy drivers
+
+   **Advocacy Stage:**
+   - Referral and recommendation triggers
+   - Social sharing motivations
+   - Community participation factors
+   - Brand ambassador potential
+
+3. **Touchpoint Mapping**
+   For each journey stage, map:
+   - **Customer Actions:** What customers do
+   - **Customer Thoughts:** What customers think and feel
+   - **Customer Emotions:** Emotional state and sentiment
+   - **Touchpoint Interactions:** Brand interaction points
+   - **Pain Points:** Frustrations and challenges
+   - **Opportunities:** Improvement and optimization areas
+
+4. **Channel and Content Strategy**
+   **Channel Optimization:**
+   - Optimal channels for each touchpoint
+   - Channel effectiveness measurement
+   - Cross-channel integration points
+   - Channel preference analysis
+
+   **Content Strategy:**
+   - Content types for each stage
+   - Messaging and tone guidelines
+   - Content format preferences
+   - Personalization opportunities
+
+5. **Journey Optimization**
+   **Friction Point Analysis:**
+   - Major pain points identification
+   - Impact on conversion and satisfaction
+   - Root cause analysis
+   - Prioritization framework
+
+   **Improvement Recommendations:**
+   - Immediate quick wins
+   - Medium-term enhancements
+   - Long-term transformation initiatives
+   - Resource requirements and ROI estimates
+
+**Requirements:**
+- Include customer quotes and feedback
+- Provide journey visualization templates
+- Include metrics and KPIs for each stage
+- Provide implementation roadmap
+- Include measurement and optimization frameworks
+```
+
+## Academic Writing and Research Templates
+
+### 1. Literature Review Synthesis
+```
+**Template: Advanced Literature Review Synthesis**
+
+Create a sophisticated synthesis of the following research literature:
+
+**Research Topic:** [Specific research area or question]
+**Time Period:** [Publication date range for included studies]
+**Database Sources:** [PubMed, Web of Science, Google Scholar, etc.]
+**Inclusion Criteria:** [Study types, quality standards, relevance filters]
+
+**Literature Synthesis Framework:**
+
+1. **Search Strategy and Methodology**
+   **Search Terms and Keywords:**
+   - Primary search terms and combinations
+   - Boolean operators and search strings
+   - Database-specific search strategies
+   - Grey literature and supplementary sources
+
+   **Screening Process:**
+   - Inclusion and exclusion criteria
+   - Screening methodology (title, abstract, full-text)
+   - Inter-rater reliability measures
+   - PRISMA flow diagram data
+
+2. **Quality Assessment Framework**
+   **Quality Criteria:**
+   - Research design appropriateness
+   - Sample size and representativeness
+   - Data collection rigor
+   - Analysis methodology soundness
+   - Reporting completeness and transparency
+
+   **Risk of Bias Assessment:**
+   - Selection bias evaluation
+   - Performance bias assessment
+   - Detection bias analysis
+   - Attrition bias review
+   - Reporting bias identification
+
+3. **Thematic Synthesis**
+   **Major Themes Identification:**
+   - Common themes across studies
+   - Divergent perspectives and findings
+   - Methodological approaches comparison
+   - Theoretical framework analysis
+
+   **Evidence Mapping:**
+   - Evidence strength by theme
+   - Consistency of findings
+   - Gaps and contradictions
+   - Novel contributions identification
+
+4. **Critical Analysis and Evaluation**
+   **Strengths Assessment:**
+   - Methodological strengths
+   - Theoretical contributions
+   - Practical implications
+   - Policy relevance
+
+   **Limitations Analysis:**
+   - Study design limitations
+   - Sample and generalizability issues
+   - Measurement and data limitations
+   - Analysis and interpretation constraints
+
+5. **Integration and Implications**
+   **Theoretical Integration:**
+   - Theoretical model development
+   - Conceptual framework synthesis
+   - Research paradigm alignment
+   - Knowledge gap identification
+
+   **Practical Implications:**
+   - Policy recommendations
+   - Practice guidelines development
+   - Intervention strategy implications
+   - Future research directions
+
+**Requirements:**
+- Include systematic review methodology
+- Provide evidence tables and synthesis matrices
+- Include forest plots or effect size summaries where applicable
+- Provide critical appraisal checklists
+- Include research gap analysis
+- Provide implications for practice and policy
+```
+
+### 2. Research Paper Writing Assistant
+```
+**Template: Research Paper Structure and Development**
+
+Develop a comprehensive research paper structure for the following topic:
+
+**Research Topic:** [Specific research question or hypothesis]
+**Target Journal:** [Journal name and requirements]
+**Paper Type:** [Original research, review, case study, etc.]
+**Word Count:** [Target manuscript length]
+
+**Research Paper Framework:**
+
+1. **Title and Abstract Development**
+   **Title Optimization:**
+   - Keywords integration
+   - Clarity and specificity
+   - Academic tone and style
+   - Journal formatting compliance
+
+   **Abstract Structure:**
+   - Background and significance
+   - Research question/objectives
+   - Methods overview
+   - Key findings
+   - Conclusions and implications
+
+2. **Introduction Development**
+   **Literature Review Integration:**
+   - Research gap identification
+   - Theoretical foundation
+   - Previous findings synthesis
+   - Study rationale and significance
+
+   **Research Questions/Hypotheses:**
+   - Clear question formulation
+   - Hypothesis development
+   - Variable definitions
+   - Expected contributions
+
+3. **Methods Section Development**
+   **Research Design:**
+   - Study design justification
+   - Research paradigm alignment
+   - Sample characteristics
+   - Setting and context description
+
+   **Data Collection:**
+   - Instrument development/validation
+   - Data collection procedures
+   - Pilot testing procedures
+   - Quality control measures
+
+   **Data Analysis:**
+   - Analytical approach justification
+   - Statistical methods description
+   - Software and tool specifications
+   - Power analysis and sample size
+
+4. **Results Presentation**
+   **Data Organization:**
+   - Results structure and flow
+   - Statistical reporting standards
+   - Figure and table integration
+   - Data visualization principles
+
+   **Findings Interpretation:**
+   - Statistical significance explanation
+   - Effect size interpretation
+   - Confidence interval reporting
+   - Subgroup analysis presentation
+
+5. **Discussion and Conclusion**
+   **Findings Interpretation:**
+   - Results explanation in context
+   - Theoretical implications
+   - Practical significance
+   - Limitations acknowledgment
+
+   **Contribution Summary:**
+   - Theoretical contributions
+   - Practical implications
+   - Policy recommendations
+   - Future research directions
+
+**Requirements:**
+- Follow IMRAD structure standards
+- Include appropriate statistical reporting
+- Provide clear methodology justification
+- Include limitations and future directions
+- Follow journal-specific formatting
+- Include all necessary sections (acknowledgments, references, etc.)
+```
+
+### 3. Citation and Referencing Assistant
+```
+**Template: Citation Management and Academic Integrity**
+
+Create a comprehensive citation management strategy for the following manuscript:
+
+**Manuscript Type:** [Research paper, thesis, dissertation, etc.]
+**Citation Style:** [APA, MLA, Chicago, Harvard, etc.]
+**Field:** [Academic discipline or subject area]
+**Reference Management Tool:** [Zotero, Mendeley, EndNote, etc.]
+
+**Citation Management Framework:**
+
+1. **Citation Style Compliance**
+   **Style Guide Requirements:**
+   - In-text citation format
+   - Reference list formatting
+   - DOI and URL handling
+   - Page number specifications
+   - Author name formatting
+
+   **Consistency Standards:**
+   - Citation format uniformity
+   - Capitalization consistency
+   - Punctuation standards
+   - Abbreviation guidelines
+
+2. **Reference Source Evaluation**
+   **Source Quality Assessment:**
+   - Peer-reviewed vs. non-peer-reviewed
+   - Publication impact factors
+   - Author credibility and expertise
+   - Publication date relevance
+   - Source accessibility and availability
+
+   **Source Type Classification:**
+   - Primary research articles
+   - Review articles and meta-analyses
+   - Books and book chapters
+   - Conference proceedings
+   - Government and institutional reports
+   - Online sources and databases
+
+3. **Reference Organization System**
+   **Reference Categories:**
+   - Theoretical foundation references
+   - Methodology references
+   - Supporting evidence references
+   - Contrasting viewpoint references
+   - Future direction references
+
+   **Reference Database Structure:**
+   - Reference categorization system
+   - Tag and keyword assignment
+   - Full-text PDF organization
+   - Annotation and note-taking system
+   - Citation frequency tracking
+
+4. **Plagiarism Prevention Strategy**
+   **Originality Assurance:**
+   - Paraphrasing techniques
+   - Synthesis and integration methods
+   - Attribution and citation practices
+   - Common knowledge identification
+
+   **Detection and Prevention:**
+   - Self-plagiarism awareness
+   - Patchwriting recognition
+   - Source material paraphrasing
+   - Direct quotation justification
+
+5. **Integration and Attribution**
+   **Citation Integration Methods:**
+   - Author prominence techniques
+   - Citation variety and placement
+   - Signal phrase usage
+   - Citation clustering strategies
+
+   **Attribution Standards:**
+   - Idea attribution requirements
+   - Common knowledge guidelines
+   - Copyright and fair use considerations
+   - Permission and licensing requirements
+
+**Requirements:**
+- Include style guide examples
+- Provide citation format templates
+- Include plagiarism checklist
+- Provide reference management workflow
+- Include academic integrity guidelines
+```
+
+## Advanced Prompting Techniques
+
+### 1. Chain-of-Thought Reasoning
+```
+**Template: Advanced Chain-of-Thought Prompting**
+
+Solve the following complex problem using advanced chain-of-thought reasoning:
+
+**Problem:** [Complex problem requiring step-by-step reasoning]
+**Domain:** [Subject area or field of expertise]
+**Reasoning Level:** [Basic, intermediate, advanced, expert]
+**Output Format:** [Explanation, solution, analysis, recommendation]
+
+**Chain-of-Thought Framework:**
+
+1. **Problem Analysis Phase**
+   **Understanding the Core Issue:**
+   - What is the fundamental problem?
+   - What are the key constraints and requirements?
+   - What are the success criteria?
+   - What assumptions can be made?
+
+   **Context and Background:**
+   - What is the broader context?
+   - What are the relevant historical factors?
+   - What are the current trends and developments?
+   - What are the stakeholder interests?
+
+2. **Knowledge Activation Phase**
+   **Relevant Knowledge Recall:**
+   - What theories or frameworks apply?
+   - What similar problems have been solved?
+   - What best practices are relevant?
+   - What expert insights should be considered?
+
+   **Information Organization:**
+   - How can the information be categorized?
+   - What are the key variables and relationships?
+   - What patterns or principles emerge?
+   - What analogies or metaphors are helpful?
+
+3. **Solution Generation Phase**
+   **Approach Development:**
+   - What are the possible solution paths?
+   - What are the pros and cons of each approach?
+   - What resources and capabilities are needed?
+   - What are the implementation challenges?
+
+   **Solution Evaluation:**
+   - How well does each solution meet the criteria?
+   - What are the risks and uncertainties?
+   - What are the resource implications?
+   - What are the scalability considerations?
+
+4. **Implementation Planning Phase**
+   **Action Planning:**
+   - What are the specific steps required?
+   - What is the timeline and sequencing?
+   - What are the dependencies and prerequisites?
+   - What are the milestones and checkpoints?
+
+   **Risk Mitigation:**
+   - What are the potential failure points?
+   - What contingency plans are needed?
+   - What monitoring systems are required?
+   - What adjustment mechanisms are in place?
+
+5. **Reflection and Optimization Phase**
+   **Outcome Assessment:**
+   - What were the actual results?
+   - How well did the solution perform?
+   - What were the unexpected outcomes?
+   - What lessons were learned?
+
+   **Process Improvement:**
+   - What could be done better next time?
+   - What new knowledge was gained?
+   - What process refinements are needed?
+   - What documentation should be created?
+
+**Requirements:**
+- Show all reasoning steps explicitly
+- Provide justification for each decision
+- Include alternative perspectives
+- Consider uncertainty and risk factors
+- Provide actionable recommendations
+```
+
+### 2. Multi-Perspective Analysis
+```
+**Template: Multi-Perspective Problem Analysis**
+
+Analyze the following issue from multiple perspectives using advanced reasoning:
+
+**Issue/Topic:** [Topic for analysis]
+**Analysis Depth:** [Surface, detailed, comprehensive]
+**Stakeholder Groups:** [Key stakeholder categories]
+**Time Horizon:** [Short-term, medium-term, long-term]
+
+**Multi-Perspective Framework:**
+
+1. **Stakeholder Perspective Analysis**
+   For each stakeholder group, consider:
+   - **Interests and Motivations:** What do they want to achieve?
+   - **Current Position:** What is their current stance or situation?
+   - **Potential Impacts:** How will the issue affect them?
+   - **Desired Outcomes:** What results would satisfy them?
+   - **Constraints and Limitations:** What restricts their options?
+
+2. **Temporal Perspective Analysis**
+   **Short-term Perspective:**
+   - Immediate impacts and consequences
+   - Quick wins and early benefits
+   - Initial challenges and obstacles
+   - Rapid response opportunities
+
+   **Medium-term Perspective:**
+   - Intermediate outcomes and milestones
+   - Transitional challenges and adaptations
+   - Progress indicators and metrics
+   - Adjustment and course correction needs
+
+   **Long-term Perspective:**
+   - Ultimate goals and end states
+   - Sustainable outcomes and benefits
+   - Legacy and lasting impact considerations
+   - Future-proofing and adaptation requirements
+
+3. **Disciplinary Perspective Analysis**
+   **Economic Perspective:**
+   - Cost-benefit analysis
+   - Resource allocation implications
+   - Market and competitive impacts
+   - Financial sustainability considerations
+
+   **Social Perspective:**
+   - Community and societal impacts
+   - Cultural considerations and implications
+   - Social equity and justice factors
+   - Public opinion and perception issues
+
+   **Technical Perspective:**
+   - Technological feasibility and requirements
+   - Innovation and advancement opportunities
+   - Technical challenges and limitations
+   - Research and development implications
+
+   **Political Perspective:**
+   - Policy and regulatory implications
+   - Political feasibility and support
+   - Governance and decision-making factors
+   - Public policy alignment considerations
+
+4. **Risk and Opportunity Analysis**
+   **Risk Perspective:**
+   - Potential negative outcomes
+   - Vulnerability and exposure factors
+   - Mitigation and prevention strategies
+   - Contingency planning requirements
+
+   **Opportunity Perspective:**
+   - Potential positive outcomes
+   - Growth and development possibilities
+   - Innovation and breakthrough potential
+   - Competitive advantage opportunities
+
+5. **Integration and Synthesis**
+   **Perspective Integration:**
+   - Common themes across perspectives
+   - Conflicting viewpoints and tensions
+   - Trade-off and compromise areas
+   - Synergistic opportunities
+
+   **Strategic Implications:**
+   - Key decision points and considerations
+   - Strategic alignment opportunities
+   - Communication and stakeholder engagement needs
+   - Implementation strategy recommendations
+
+**Requirements:**
+- Provide balanced analysis across perspectives
+- Identify conflicts and synergies between viewpoints
+- Include specific examples and evidence
+- Provide actionable strategic recommendations
+- Consider implementation challenges and opportunities
+```
+
+### 3. Self-Reflection and Meta-Cognition
+```
+**Template: Self-Reflective Analysis and Meta-Cognition**
+
+Perform a self-reflective analysis of the following thinking process or decision:
+
+**Subject for Reflection:** [Decision, analysis, or thinking process]
+**Reflection Level:** [Surface, moderate, deep, comprehensive]
+**Reflection Purpose:** [Learning, improvement, validation, documentation]
+
+**Self-Reflection Framework:**
+
+1. **Process Documentation**
+   **Thinking Process Description:**
+   - What was the original problem or question?
+   - What was the approach or methodology used?
+   - What were the key steps and decisions?
+   - What information and data were considered?
+
+   **Decision Timeline:**
+   - What was the sequence of thoughts?
+   - What were the key decision points?
+   - How did the thinking evolve over time?
+   - What were the turning points or insights?
+
+2. **Meta-Cognitive Analysis**
+   **Thinking Quality Assessment:**
+   - How thorough was the analysis?
+   - How logical was the reasoning?
+   - How creative was the problem-solving?
+   - How critical was the evaluation?
+
+   **Cognitive Bias Evaluation:**
+   - What biases might have influenced the thinking?
+   - How was confirmation bias avoided?
+   - Were alternative perspectives considered?
+   - Was there openness to contradictory evidence?
+
+3. **Knowledge and Assumption Analysis**
+   **Knowledge Base Evaluation:**
+   - What knowledge was applied?
+   - How current and relevant was the knowledge?
+   - What knowledge gaps existed?
+   - How were knowledge limitations handled?
+
+   **Assumption Identification:**
+   - What explicit assumptions were made?
+   - What implicit assumptions existed?
+   - How were assumptions validated?
+   - What assumptions proved incorrect?
+
+4. **Emotional and Intuitive Factors**
+   **Emotional Influence Assessment:**
+   - How did emotions affect the thinking?
+   - What was the emotional context?
+   - How was emotional bias managed?
+   - What emotional intelligence was demonstrated?
+
+   **Intuition Analysis:**
+   - When was intuition used in the process?
+   - How reliable was the intuition?
+   - What was the balance between analysis and intuition?
+   - How was intuitive insight validated?
+
+5. **Outcome and Learning Analysis**
+   **Outcome Evaluation:**
+   - What were the actual results?
+   - How accurate were the predictions?
+   - What unexpected outcomes occurred?
+   - What was the quality of the outcome?
+
+   **Learning and Improvement:**
+   - What was learned from the process?
+   - What would be done differently next time?
+   - What new skills or knowledge were gained?
+   - How can the process be improved?
+
+**Requirements:**
+- Be honest and objective in self-assessment
+- Identify specific examples and instances
+- Consider both strengths and weaknesses
+- Provide concrete improvement recommendations
+- Include actionable learning goals
+```
+
+## Specialized Domain Templates
+
+### 1. Medical and Healthcare Research
+```
+**Template: Clinical Research Study Design**
+
+Design a comprehensive clinical research study for the following medical condition:
+
+**Medical Condition:** [Specific disease or health condition]
+**Study Type:** [Interventional, observational, diagnostic, etc.]
+**Patient Population:** [Target patient demographics and characteristics]
+**Study Phase:** [Phase 1, 2, 3, 4, or observational]
+
+**Clinical Study Framework:**
+
+1. **Research Question Development**
+   **PICO Framework:**
+   - **Population:** Specific patient characteristics
+   - **Intervention:** Treatment or intervention being studied
+   - **Comparison:** Control or comparison group
+   - **Outcome:** Primary and secondary outcomes
+
+   **Research Hypothesis:**
+   - Clear, testable hypothesis
+   - Clinical significance justification
+   - Statistical hypothesis formulation
+   - Expected effect size
+
+2. **Study Design Specification**
+   **Design Type:**
+   - Randomized controlled trial (RCT)
+   - Cohort study
+   - Case-control study
+   - Cross-sectional study
+   - Case series or reports
+
+   **Randomization and Blinding:**
+   - Randomization method and allocation concealment
+   - Blinding procedures (single, double, triple)
+   - Placebo or sham control design
+   - Minimization of bias
+
+3. **Patient Recruitment and Eligibility**
+   **Inclusion Criteria:**
+   - Specific demographic requirements
+   - Disease severity specifications
+   - Treatment history requirements
+   - Language and cognitive requirements
+
+   **Exclusion Criteria:**
+   - Contraindications for intervention
+   - Conflicting medications or conditions
+   - Non-compliance risk factors
+   - Safety concerns
+
+4. **Intervention and Control Procedures**
+   **Intervention Protocol:**
+   - Detailed treatment procedures
+   - Dosage and administration guidelines
+   - Duration and frequency specifications
+   - Monitoring and adjustment protocols
+
+   **Control Group Procedures:**
+   - Standard care or placebo procedures
+   - Blinding maintenance methods
+   - Contamination prevention measures
+   - Crossover considerations
+
+5. **Outcome Measures and Data Collection**
+   **Primary Outcomes:**
+   - Clinical significance criteria
+   - Measurement timing and methods
+   - Inter-rater reliability requirements
+   - Missing data handling procedures
+
+   **Secondary Outcomes:**
+   - Additional efficacy measures
+   - Safety and tolerability assessments
+   - Quality of life indicators
+   - Economic outcome measures
+
+**Requirements:**
+- Include statistical analysis plan
+- Provide sample size justification
+- Include safety monitoring procedures
+- Provide regulatory compliance information
+- Include ethical approval requirements
+```
+
+### 2. Legal and Compliance Research
+```
+**Template: Legal Research and Analysis Framework**
+
+Conduct comprehensive legal research and analysis for the following matter:
+
+**Legal Issue:** [Specific legal question or problem]
+**Jurisdiction:** [Geographic and legal jurisdiction]
+**Legal Domain:** [Contract, tort, criminal, corporate, etc.]
+**Research Purpose:** [Case preparation, compliance review, policy development]
+
+**Legal Research Framework:**
+
+1. **Legal Issue Analysis**
+   **Issue Identification:**
+   - Core legal questions to be answered
+   - Relevant facts and circumstances
+   - Applicable legal principles
+   - Stakeholder interests and positions
+
+   **Issue Framing:**
+   - Legal theories and doctrines applicable
+   - Statutory provisions and regulations
+   - Case law precedents
+   - Administrative rules and guidelines
+
+2. **Research Strategy Development**
+   **Primary Sources:**
+   - Constitutional provisions
+   - Statutory law and codes
+   - Case law and judicial decisions
+   - Administrative regulations and decisions
+
+   **Secondary Sources:**
+   - Legal treatises and textbooks
+   - Law review articles and journals
+   - Practice guides and manuals
+   - Expert commentary and analysis
+
+3. **Source Evaluation and Selection**
+   **Authority Assessment:**
+   - Source credibility and reputation
+   - Author expertise and qualifications
+   - Publication timeliness and currency
+   - Citation patterns and influence
+
+   **Relevance Evaluation:**
+   - Direct applicability to the issue
+   - Geographic jurisdiction alignment
+   - Temporal relevance and updates
+   - Binding vs. persuasive authority
+
+4. **Legal Analysis and Reasoning**
+   **Issue Analysis:**
+   - Factual pattern identification
+   - Legal rule application
+   - Analogous case comparison
+   - Policy consideration integration
+
+   **Argument Development:**
+   - Supporting authority identification
+   - Counterargument anticipation
+   - Weakness acknowledgment
+   - Strength emphasis
+
+5. **Conclusion and Recommendation**
+   **Legal Conclusion:**
+   - Clear answer to legal question
+   - Confidence level assessment
+   - Alternative interpretation consideration
+   - Future development anticipation
+
+   **Practical Recommendations:**
+   - Implementation guidance
+   - Risk assessment and mitigation
+   - Compliance strategy development
+   - Monitoring and update procedures
+
+**Requirements:**
+- Include comprehensive source citations
+- Provide authority hierarchy analysis
+- Include counterargument consideration
+- Provide practical implementation guidance
+- Include risk assessment and mitigation strategies
+```
+
 Remember: These templates serve as starting points and should be customized to fit specific needs and contexts. The most effective prompts are those that are carefully adapted to the unique requirements of each situation.

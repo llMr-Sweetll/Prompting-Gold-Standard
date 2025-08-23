@@ -100,9 +100,11 @@ This work is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) f
 
 ## 🔗 Related Resources
 
-- [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
-- [Google AI Prompting Best Practices](https://ai.googleblog.com/)
-- [Academic AI Ethics Guidelines](https://www.aaai.org/ocs/index.php/ETHICS/ETHICS18)
+- [OpenAI GPT-5 Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
+- [Anthropic Claude 4.1 Prompting Best Practices](https://docs.anthropic.com/claude/prompt-library)
+- [Google Gemini Advanced Prompting](https://aistudio.google.com/app/prompts)
+- [XAI Grok Model Capabilities](https://x.ai/grok/)
+- [Chinese AI Models Guide](https://github.com/THUDM/ChatGLM-6B)
 
 ---
 

@@ -8,47 +8,57 @@ This comprehensive guide covers the essential tools, platforms, and frameworks f
 
 ### 1. OpenAI GPT Series
 **Platform**: [OpenAI Platform](https://platform.openai.com/)
-**Models**: GPT-4, GPT-3.5-turbo, GPT-4-turbo
+**Models**: GPT-5, GPT-4-turbo (legacy support)
 **Key Features**:
-- Advanced reasoning capabilities with GPT-4
-- Function calling and structured outputs
+- Advanced reasoning capabilities with GPT-5
+- Enhanced multimodal processing (text, images, code)
+- Advanced function calling and structured outputs
 - Fine-tuning capabilities for custom models
 - Comprehensive API documentation
+- Context window up to 128K tokens
 
 **Prompting Strengths**:
-- Excellent instruction following
-- Strong context understanding
+- Exceptional instruction following and task understanding
+- Advanced chain-of-thought and reasoning capabilities
 - Reliable JSON mode for structured outputs
-- Advanced chain-of-thought prompting support
+- Multi-turn conversation memory
+- Code generation and debugging assistance
 
 **Best For**:
-- Complex reasoning tasks
-- Academic writing and analysis
+- Complex reasoning tasks requiring deep analysis
+- Academic writing and research synthesis
 - Professional content creation
-- Research synthesis
+- Technical documentation and code generation
+- Advanced data analysis and interpretation
 
 **Pricing**: Pay-per-use based on tokens
 
 ### 2. Anthropic Claude
 **Platform**: [Anthropic Console](https://console.anthropic.com/)
-**Models**: Claude 3 Opus, Claude 3 Sonnet, Claude 3 Haiku
+**Models**: Claude 4.1 Opus, Claude 4.1 Sonnet, Claude 3.5 Haiku, Claude 3 Opus
 **Key Features**:
-- Constitutional AI approach
-- Strong safety and ethical guidelines
-- Long context windows (200K tokens)
-- Multimodal capabilities (text + images)
+- Advanced constitutional AI approach with enhanced safety
+- Context windows up to 500K tokens (4.1 series)
+- Multimodal capabilities (text, images, documents)
+- Advanced agentic capabilities with tool use
+- Enhanced reasoning and analysis features
+- Real-time streaming responses
 
 **Prompting Strengths**:
-- Nuanced understanding of complex instructions
-- Excellent for creative and analytical tasks
-- Strong bias mitigation
-- Reliable handling of sensitive topics
+- Exceptional nuanced understanding of complex instructions
+- Advanced chain-of-thought reasoning capabilities
+- Superior bias mitigation and ethical alignment
+- Reliable handling of sensitive and controversial topics
+- Strong context retention over long documents
+- Advanced tool integration and function calling
 
 **Best For**:
-- Ethical AI applications
-- Creative writing and content generation
-- Academic research with safety considerations
-- Long-form document analysis
+- Ethical AI applications requiring high safety standards
+- Creative writing and complex content generation
+- Academic research with stringent safety considerations
+- Long-form document analysis and synthesis
+- Professional applications needing reliable outputs
+- Multi-step reasoning and analysis tasks
 
 **Pricing**: Pay-per-use based on tokens
 
@@ -120,6 +130,35 @@ This comprehensive guide covers the essential tools, platforms, and frameworks f
 - Market research analysis
 
 **Pricing**: Custom enterprise pricing
+
+### 6. XAI Grok
+**Platform**: [XAI Grok](https://x.ai/grok/)
+**Models**: Grok-4, Grok-3.5, Grok-3
+**Key Features**:
+- Built by xAI (Elon Musk's AI company)
+- Real-time access to X (Twitter) data
+- Focus on truth-seeking and helpful responses
+- Advanced reasoning with humorous personality
+- Context windows up to 300K tokens
+- Built-in web search and fact-checking capabilities
+
+**Prompting Strengths**:
+- Strong real-time information access
+- Excellent for current events and trending topics
+- Helpful and witty responses
+- Advanced mathematical and scientific reasoning
+- Built-in fact verification and source citation
+- Multi-modal capabilities with X integration
+
+**Best For**:
+- Current events analysis and research
+- Social media trend analysis
+- Real-time information synthesis
+- Creative problem-solving with humor
+- Academic research requiring current data
+- Business intelligence with market insights
+
+**Pricing**: Free tier available, premium features for enterprise
 
 ## Prompt Engineering Development Tools
 

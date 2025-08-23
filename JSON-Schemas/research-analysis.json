@@ -1,0 +1,312 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://prompting-gold-standard.com/schemas/research-analysis.json",
+  "title": "Research Paper Analysis Schema",
+  "description": "JSON schema for validating AI-generated research paper analysis",
+  "version": "1.0.0",
+
+  "type": "object",
+  "properties": {
+    "paper_metadata": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 300,
+          "description": "Full title of the research paper"
+        },
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 100
+          },
+          "minItems": 1,
+          "maxItems": 20,
+          "description": "List of all authors"
+        },
+        "publication_year": {
+          "type": "integer",
+          "minimum": 1900,
+          "maximum": 2025,
+          "description": "Year of publication"
+        },
+        "journal": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 200,
+          "description": "Journal or conference name"
+        },
+        "doi": {
+          "type": "string",
+          "pattern": "^10\\.\\d{4,9}/[-._;()/:A-Z0-9]+$",
+          "description": "Digital Object Identifier"
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 50
+          },
+          "minItems": 3,
+          "maxItems": 10,
+          "description": "Key research keywords"
+        }
+      },
+      "required": ["title", "authors", "publication_year"]
+    },
+
+    "methodology_analysis": {
+      "type": "object",
+      "properties": {
+        "research_design": {
+          "type": "string",
+          "enum": [
+            "experimental",
+            "quasi-experimental",
+            "observational",
+            "case study",
+            "survey",
+            "mixed methods",
+            "systematic review",
+            "meta-analysis",
+            "qualitative",
+            "action research"
+          ],
+          "description": "Primary research design"
+        },
+        "sample_size": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000,
+          "description": "Number of participants or cases"
+        },
+        "data_collection_methods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 100
+          },
+          "minItems": 1,
+          "maxItems": 10,
+          "description": "Methods used to collect data"
+        },
+        "analysis_techniques": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 100
+          },
+          "minItems": 1,
+          "maxItems": 15,
+          "description": "Statistical or analytical methods used"
+        },
+        "methodological_strengths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 300
+          },
+          "minItems": 1,
+          "maxItems": 10,
+          "description": "Key strengths of the methodology"
+        },
+        "methodological_limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 300
+          },
+          "minItems": 1,
+          "maxItems": 10,
+          "description": "Key limitations of the methodology"
+        }
+      },
+      "required": ["research_design"]
+    },
+
+    "content_analysis": {
+      "type": "object",
+      "properties": {
+        "abstract_summary": {
+          "type": "string",
+          "minLength": 50,
+          "maxLength": 500,
+          "description": "Brief summary of the paper's main findings"
+        },
+        "key_findings": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 20,
+            "maxLength": 400
+          },
+          "minItems": 1,
+          "maxItems": 15,
+          "description": "Major findings and results"
+        },
+        "research_gaps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 20,
+            "maxLength": 300
+          },
+          "minItems": 0,
+          "maxItems": 10,
+          "description": "Identified gaps or limitations"
+        },
+        "future_research_directions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 20,
+            "maxLength": 300
+          },
+          "minItems": 0,
+          "maxItems": 10,
+          "description": "Suggested future research directions"
+        },
+        "theoretical_contributions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 20,
+            "maxLength": 300
+          },
+          "minItems": 0,
+          "maxItems": 10,
+          "description": "Theoretical contributions to the field"
+        }
+      },
+      "required": ["abstract_summary", "key_findings"]
+    },
+
+    "quality_assessment": {
+      "type": "object",
+      "properties": {
+        "methodological_quality_score": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Overall methodological quality (1-10)"
+        },
+        "evidence_strength": {
+          "type": "string",
+          "enum": ["very strong", "strong", "moderate", "weak", "very weak"],
+          "description": "Strength of evidence supporting findings"
+        },
+        "reproducibility_assessment": {
+          "type": "string",
+          "enum": ["fully reproducible", "partially reproducible", "not reproducible", "unclear"],
+          "description": "Assessment of study reproducibility"
+        },
+        "bias_risk": {
+          "type": "string",
+          "enum": ["very low", "low", "moderate", "high", "very high"],
+          "description": "Risk of bias in the study"
+        },
+        "peer_review_status": {
+          "type": "string",
+          "enum": ["peer reviewed", "preprint", "conference paper", "working paper", "other"],
+          "description": "Publication and review status"
+        }
+      },
+      "required": ["methodological_quality_score", "evidence_strength"]
+    },
+
+    "ai_assistance_analysis": {
+      "type": "object",
+      "properties": {
+        "ai_tools_detected": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["GPT-5", "GPT-4", "Claude 4.1", "Claude 3.5", "Grok-4", "DeepSeek", "ChatGLM", "Other"]
+          },
+          "minItems": 0,
+          "maxItems": 10,
+          "description": "AI tools used in the research process"
+        },
+        "ai_usage_purpose": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["literature review", "data analysis", "writing assistance", "code generation", "idea generation", "other"]
+          },
+          "minItems": 0,
+          "maxItems": 8,
+          "description": "Purposes for which AI was used"
+        },
+        "transparency_score": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Level of AI usage transparency (1-10)"
+        },
+        "ethical_compliance": {
+          "type": "string",
+          "enum": ["fully compliant", "mostly compliant", "partially compliant", "non-compliant", "unclear"],
+          "description": "Assessment of ethical AI usage compliance"
+        }
+      }
+    },
+
+    "validation_metadata": {
+      "type": "object",
+      "properties": {
+        "validated_by": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 100,
+          "description": "Name or identifier of validator"
+        },
+        "validation_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of validation"
+        },
+        "validation_method": {
+          "type": "string",
+          "enum": ["manual", "automated", "hybrid"],
+          "description": "Method used for validation"
+        },
+        "confidence_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in validation accuracy (0-1)"
+        },
+        "validation_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 500
+          },
+          "minItems": 0,
+          "maxItems": 20,
+          "description": "Additional notes about validation process"
+        }
+      },
+      "required": ["validated_by", "validation_date", "validation_method", "confidence_score"]
+    }
+  },
+
+  "required": [
+    "paper_metadata",
+    "methodology_analysis",
+    "content_analysis",
+    "quality_assessment",
+    "validation_metadata"
+  ],
+
+  "additionalProperties": false
+}

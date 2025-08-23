@@ -32,7 +32,7 @@ Structure context with the most important information first, followed by support
 ### 3. Context Window Management
 Be aware of token limits and prioritize information accordingly.
 
-- **GPT-4**: ~32,000 tokens (approximately 24,000 words)
+- **GPT-5**: ~128,000 tokens (approximately 96,000 words)
 - **Claude**: ~200,000 tokens (approximately 150,000 words)
 - **Gemini Pro**: ~30,000 tokens (approximately 22,000 words)
 

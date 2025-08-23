@@ -1,0 +1,347 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://prompting-gold-standard.com/schemas/content-validation.json",
+  "title": "AI Content Validation Schema",
+  "description": "JSON schema for validating AI-generated content quality and accuracy",
+  "version": "1.0.0",
+
+  "type": "object",
+  "properties": {
+    "content_metadata": {
+      "type": "object",
+      "properties": {
+        "content_type": {
+          "type": "string",
+          "enum": ["academic", "technical", "creative", "business", "educational"],
+          "description": "Type of content being validated"
+        },
+        "word_count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100000,
+          "description": "Total word count of content"
+        },
+        "reading_level": {
+          "type": "string",
+          "enum": ["elementary", "middle_school", "high_school", "undergraduate", "graduate", "professional", "expert"],
+          "description": "Appropriate reading level"
+        },
+        "primary_language": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 10,
+          "description": "Primary language of content"
+        },
+        "generation_model": {
+          "type": "string",
+          "enum": ["GPT-5", "Claude 4.1", "Grok-4", "DeepSeek", "ChatGLM", "Other"],
+          "description": "AI model used for generation"
+        }
+      },
+      "required": ["content_type", "word_count", "generation_model"]
+    },
+
+    "quality_metrics": {
+      "type": "object",
+      "properties": {
+        "clarity_score": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Content clarity and readability (1-10)"
+        },
+        "coherence_score": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Logical flow and coherence (1-10)"
+        },
+        "accuracy_score": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Factual accuracy and correctness (1-10)"
+        },
+        "originality_score": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Originality and unique insights (1-10)"
+        },
+        "completeness_score": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Coverage of topic and comprehensiveness (1-10)"
+        },
+        "style_appropriateness": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Appropriateness of tone and style (1-10)"
+        }
+      },
+      "required": ["clarity_score", "accuracy_score"]
+    },
+
+    "factual_verification": {
+      "type": "object",
+      "properties": {
+        "fact_claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "claim": {
+                "type": "string",
+                "minLength": 10,
+                "maxLength": 500,
+                "description": "Factual claim made in content"
+              },
+              "verification_status": {
+                "type": "string",
+                "enum": ["verified", "partially_verified", "unverified", "disputed", "needs_research"],
+                "description": "Status of fact verification"
+              },
+              "confidence_level": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Confidence in verification (0-1)"
+              },
+              "source": {
+                "type": "string",
+                "minLength": 5,
+                "maxLength": 500,
+                "description": "Source used for verification"
+              },
+              "verification_date": {
+                "type": "string",
+                "format": "date-time",
+                "description": "When verification was performed"
+              }
+            },
+            "required": ["claim", "verification_status", "confidence_level"]
+          },
+          "minItems": 0,
+          "maxItems": 50,
+          "description": "List of factual claims requiring verification"
+        },
+        "citation_accuracy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Accuracy of citations and references (0-1)"
+        },
+        "source_diversity": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Diversity of sources used (1-10)"
+        }
+      }
+    },
+
+    "ethical_compliance": {
+      "type": "object",
+      "properties": {
+        "plagiarism_risk": {
+          "type": "string",
+          "enum": ["very low", "low", "moderate", "high", "very high"],
+          "description": "Risk of plagiarism or AI text similarity"
+        },
+        "ai_disclosure": {
+          "type": "string",
+          "enum": ["fully_disclosed", "partially_disclosed", "not_disclosed"],
+          "description": "Level of AI usage disclosure"
+        },
+        "bias_assessment": {
+          "type": "object",
+          "properties": {
+            "cultural_bias": {
+              "type": "string",
+              "enum": ["none_detected", "minimal", "moderate", "significant"],
+              "description": "Presence of cultural bias"
+            },
+            "gender_bias": {
+              "type": "string",
+              "enum": ["none_detected", "minimal", "moderate", "significant"],
+              "description": "Presence of gender bias"
+            },
+            "confirmation_bias": {
+              "type": "string",
+              "enum": ["none_detected", "minimal", "moderate", "significant"],
+              "description": "Presence of confirmation bias"
+            }
+          }
+        },
+        "privacy_compliance": {
+          "type": "string",
+          "enum": ["compliant", "partially_compliant", "non_compliant", "not_applicable"],
+          "description": "Compliance with privacy regulations"
+        }
+      },
+      "required": ["plagiarism_risk", "ai_disclosure"]
+    },
+
+    "structural_analysis": {
+      "type": "object",
+      "properties": {
+        "document_structure": {
+          "type": "object",
+          "properties": {
+            "has_title": {"type": "boolean"},
+            "has_abstract": {"type": "boolean"},
+            "has_introduction": {"type": "boolean"},
+            "has_conclusion": {"type": "boolean"},
+            "section_count": {"type": "integer", "minimum": 0},
+            "subsection_count": {"type": "integer", "minimum": 0}
+          }
+        },
+        "readability_metrics": {
+          "type": "object",
+          "properties": {
+            "flesch_reading_ease": {"type": "number", "minimum": 0, "maximum": 100},
+            "average_sentence_length": {"type": "number", "minimum": 1},
+            "average_syllables_per_word": {"type": "number", "minimum": 1},
+            "complex_word_percentage": {"type": "number", "minimum": 0, "maximum": 100}
+          }
+        },
+        "formatting_quality": {
+          "type": "object",
+          "properties": {
+            "proper_grammar": {"type": "boolean"},
+            "consistent_style": {"type": "boolean"},
+            "appropriate_formatting": {"type": "boolean"},
+            "spelling_errors": {"type": "integer", "minimum": 0}
+          }
+        }
+      }
+    },
+
+    "ai_detection_analysis": {
+      "type": "object",
+      "properties": {
+        "ai_probability_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Probability that content was AI-generated (0-1)"
+        },
+        "detection_methods_used": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["Turnitin", "GPTZero", "ZeroGPT", "Originality.ai", "Custom Model", "Statistical Analysis"]
+          },
+          "minItems": 1,
+          "maxItems": 10,
+          "description": "AI detection tools used"
+        },
+        "pattern_analysis": {
+          "type": "object",
+          "properties": {
+            "sentence_variability": {"type": "number", "minimum": 0, "maximum": 1},
+            "vocabulary_diversity": {"type": "number", "minimum": 0, "maximum": 1},
+            "repetition_patterns": {"type": "number", "minimum": 0, "maximum": 1},
+            "structural_consistency": {"type": "number", "minimum": 0, "maximum": 1}
+          }
+        },
+        "human_indicators": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 200
+          },
+          "minItems": 0,
+          "maxItems": 20,
+          "description": "Indicators of human involvement"
+        }
+      },
+      "required": ["ai_probability_score"]
+    },
+
+    "improvement_recommendations": {
+      "type": "object",
+      "properties": {
+        "critical_issues": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 300
+          },
+          "minItems": 0,
+          "maxItems": 10,
+          "description": "Critical issues requiring immediate attention"
+        },
+        "major_improvements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 300
+          },
+          "minItems": 0,
+          "maxItems": 15,
+          "description": "Major improvements needed"
+        },
+        "minor_suggestions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 300
+          },
+          "minItems": 0,
+          "maxItems": 20,
+          "description": "Minor suggestions for enhancement"
+        },
+        "priority_level": {
+          "type": "string",
+          "enum": ["urgent", "high", "medium", "low"],
+          "description": "Overall priority of improvements"
+        }
+      }
+    },
+
+    "validation_summary": {
+      "type": "object",
+      "properties": {
+        "overall_validation_score": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Overall content validation score (1-10)"
+        },
+        "validation_confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in validation results (0-1)"
+        },
+        "recommendation": {
+          "type": "string",
+          "enum": ["publish_as_is", "minor_revisions", "major_revisions", "reject"],
+          "description": "Overall recommendation for content"
+        },
+        "validation_notes": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 1000,
+          "description": "Additional validation notes and observations"
+        }
+      },
+      "required": ["overall_validation_score", "recommendation"]
+    }
+  },
+
+  "required": [
+    "content_metadata",
+    "quality_metrics",
+    "validation_summary"
+  ],
+
+  "additionalProperties": false
+}

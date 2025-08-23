@@ -1,6 +1,6 @@
 # MIT License
 
-Copyright (c) 2024 Prompting-Gold-Standard Community
+Copyright (c) 2025 Prompting-Gold-Standard Community
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -27,7 +27,7 @@ When using content from this repository in academic work, research papers, or ed
 
 ```
 This work incorporates materials from the Prompting-Gold-Standard repository
-(https://github.com/[username]/prompting-gold-standard), licensed under the MIT License.
+(https://github.com/llMr-Sweetll/Prompting-Gold-Standard), licensed under the MIT License.
 ```
 
 ### Citation Format
@@ -35,17 +35,17 @@ For academic citations, use the following format:
 
 **APA 7th Edition:**
 ```
-Community Contributors. (2024). Prompting-Gold-Standard: Advanced prompt & context engineering for LLMs in academic workflows [Repository]. GitHub. https://github.com/[username]/prompting-gold-standard
+Community Contributors. (2025). Prompting-Gold-Standard: Advanced prompt & context engineering for LLMs in academic workflows [Repository]. GitHub. https://github.com/llMr-Sweetll/Prompting-Gold-Standard
 ```
 
 **MLA 9th Edition:**
 ```
-Community Contributors. "Prompting-Gold-Standard: Advanced Prompt & Context Engineering for LLMs in Academic Workflows." GitHub, 2024, github.com/[username]/prompting-gold-standard.
+Community Contributors. "Prompting-Gold-Standard: Advanced Prompt & Context Engineering for LLMs in Academic Workflows." GitHub, 2025, github.com/llMr-Sweetll/Prompting-Gold-Standard.
 ```
 
 **Chicago 17th Edition:**
 ```
-Community Contributors. 2024. "Prompting-Gold-Standard: Advanced Prompt & Context Engineering for LLMs in Academic Workflows." GitHub repository. https://github.com/[username]/prompting-gold-standard.
+Community Contributors. 2025. "Prompting-Gold-Standard: Advanced Prompt & Context Engineering for LLMs in Academic Workflows." GitHub repository. https://github.com/llMr-Sweetll/Prompting-Gold-Standard.
 ```
 
 ### Commercial Use Guidelines
