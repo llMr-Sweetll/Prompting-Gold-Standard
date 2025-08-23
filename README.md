@@ -30,6 +30,15 @@ The goal of this repository is to establish best practices for AI-assisted conte
 - [`prompt-templates.md`](Examples/prompt-templates.md) - Reusable templates for different scenarios
 - [`case-studies.md`](Examples/case-studies.md) - Real-world examples of successful AI-assisted projects
 
+### Academic/
+- [`README.md`](Academic/README.md) - Comprehensive academic prompting guide for researchers and students
+- [`Research-Methodology/`](Academic/Research-Methodology/) - Hypothesis generation, experimental design
+- [`Writing-Assistant/`](Academic/Writing-Assistant/) - Academic writing and publication support
+- [`STEM-Fields/`](Academic/STEM-Fields/) - Physics, chemistry, engineering, mathematics prompting
+- [`Humanities-Arts/`](Academic/Humanities-Arts/) - Art history, literature, history, philosophy
+- [`Ethics-Integrity/`](Academic/Ethics-Integrity/) - Academic integrity and ethical AI use
+- [`Software-Integration/`](Academic/Software-Integration/) - Academic software and tool integration
+
 ### Programming/
 - [`README.md`](Programming/README.md) - Complete programming toolkit for senior developers
 - [`Computer-Science/`](Programming/Computer-Science/) - Algorithms, data structures, complexity analysis
