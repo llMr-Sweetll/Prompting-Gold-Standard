@@ -3,17 +3,28 @@
   <img src="https://media.giphy.com/media/QNFhOolVeCzPQ2Mx85/giphy.gif" width="100%" alt="Prompting Gold Standard - Animated Banner"/>
 </p>
 
-<h1 align="center">Prompting Gold Standard 
-  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"/>
+<h1 align="center">
+  Prompting Gold Standard
+  <br>
+  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="40"/>
 </h1>
+
 <p align="center">
-  <a href="https://github.com/llMr-Sweetll"><img src="https://img.shields.io/github/followers/llMr-Sweetll?style=for-the-badge&logo=github"></a>
-  <img src="https://img.shields.io/github/stars/llMr-Sweetll/Prompting-Gold-Standard?style=for-the-badge&color=ff69b4">
-  <img src="https://img.shields.io/github/license/llMr-Sweetll/Prompting-Gold-Standard?style=for-the-badge">
+  <a href="https://github.com/llMr-Sweetll"><img alt="Github Followers" src="https://img.shields.io/github/followers/llMr-Sweetll?color=purple&style=for-the-badge"></a>
+  <img alt="Stars" src="https://img.shields.io/github/stars/llMr-Sweetll/Prompting-Gold-Standard?color=yellow&style=for-the-badge">
+  <img alt="License" src="https://img.shields.io/github/license/llMr-Sweetll/Prompting-Gold-Standard?style=for-the-badge">
+  <img src="https://img.shields.io/badge/PRs-Welcome-green?style=for-the-badge&logo=handshake">
 </p>
 
 ---
+<!-- BRANDING By Mr. Sweet -->
 
+<p align="center"><i>
+  “Unlock your AI brilliance—the Mr. Sweet way!”<br>
+  <b>AI Prompt Engineering | Coaching | Community</b>
+</i></p>
+
+---
 
 ### 🎨 **Welcome from Mr. Sweet!** 🎨
 
@@ -158,4 +169,14 @@ This work is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) f
 
 ---
 
+
+
+<p align="center">
+  <img src="https://media.giphy.com/media/SWoSkN6DxTszqIKEqv/giphy.gif" width="100%" alt="Sweet AI Gif"/>
+</p>
+
+<h2 align="center">✨ Powered by <span style="color:#F7C873;">Mr. Sweet</span></h2>
+
 *Remember: AI is a powerful tool, but human judgment, critical thinking, and ethical considerations remain essential for producing high-quality, trustworthy work.*
+
+---
