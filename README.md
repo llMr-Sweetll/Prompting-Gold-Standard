@@ -20,7 +20,7 @@
 <!-- BRANDING By Mr. Sweet -->
 
 <p align="center"><i>
-  “Unlock your AI brilliance—the Mr. Sweet way!”<br>
+  “Unlock your AI brilliance—the Sweetest way!”<br>
   <b>AI Prompt Engineering | Coaching | Community</b>
 </i></p>
 
