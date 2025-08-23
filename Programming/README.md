@@ -33,6 +33,8 @@ Fundamental computer science concepts with algorithmic assistance
 - [`distributed-systems.md`](./Computer-Science/distributed-systems.md) - Distributed computing patterns
 - [`concurrency-patterns.md`](./Computer-Science/concurrency-patterns.md) - Concurrent and parallel programming
 
+*Fun fact: These algorithms are so sweet, they make sorting a piece of cake! 🍰*
+
 ### [Systems-Programming/](./Systems-Programming/)
 Low-level and systems programming techniques
 - [`memory-management.md`](./Systems-Programming/memory-management.md) - Memory optimization and management

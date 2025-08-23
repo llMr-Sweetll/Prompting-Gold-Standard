@@ -30,6 +30,12 @@ The goal of this repository is to establish best practices for AI-assisted conte
 - [`prompt-templates.md`](Examples/prompt-templates.md) - Reusable templates for different scenarios
 - [`case-studies.md`](Examples/case-studies.md) - Real-world examples of successful AI-assisted projects
 
+### Programming/
+- [`README.md`](Programming/README.md) - Complete programming toolkit for senior developers
+- [`Computer-Science/`](Programming/Computer-Science/) - Algorithms, data structures, complexity analysis
+- [`Software-Engineering/`](Programming/Software-Engineering/) - SDLC, architecture, testing, deployment
+- [`Systems-Programming/`](Programming/Systems-Programming/) - Memory management and low-level optimization
+
 ### Resources/
 - [`references.md`](Resources/references.md) - Curated list of academic sources and further reading
 - [`tools-and-tools.md`](Resources/tools-and-tools.md) - Recommended tools, models, and platforms
