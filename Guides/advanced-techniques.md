@@ -517,7 +517,7 @@ Refined Technique:
 ## Resources for Further Learning
 
 - [Chain-of-Thought Prompting Paper](https://arxiv.org/abs/2201.11903)
-- "Advanced Prompt Engineering" by Anthropic (2024)
+- "Advanced Prompt Engineering" by Anthropic (2025)
 - [Google's Self-Reflection Techniques](https://ai.googleblog.com/2023/05/large-language-models.html)
 - "Reasoning with Language Models" (Stanford Research, 2023)
 - [OpenAI's Advanced Prompting Guide](https://platform.openai.com/docs/guides/prompt-engineering)

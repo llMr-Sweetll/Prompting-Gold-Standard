@@ -367,7 +367,7 @@ Overall Context Effectiveness: [Average of scores]
 - [OpenAI Context Engineering Guide](https://platform.openai.com/docs/guides/context-engineering)
 - "Context Management in Large Language Models" (Stanford Research Paper, 2023)
 - [Anthropic's Context Window Best Practices](https://docs.anthropic.com/claude/docs/context-window)
-- "Information Architecture for AI Systems" by Morville and Rosenfeld (2024)
+- "Information Architecture for AI Systems" by Morville and Rosenfeld (2025)
 
 ## Practice Exercises
 

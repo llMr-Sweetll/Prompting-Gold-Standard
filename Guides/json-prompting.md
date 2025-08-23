@@ -46,7 +46,7 @@ Incorporating validation rules ensures data quality and consistency.
   "validation_rules": {
     "title": "Required, 10-200 characters",
     "authors": "Required, minimum 1 author",
-    "publication_year": "Required, 1900-2024",
+    "publication_year": "Required, 1900-2025",
     "doi": "Optional, must match DOI format if provided"
   }
 }

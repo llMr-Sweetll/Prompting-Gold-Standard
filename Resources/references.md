@@ -355,8 +355,8 @@ When citing this reference guide in academic work:
 @misc{prompting-gold-standard-references,
   title={References and Further Reading: Prompting-Gold-Standard},
   author={Community Contributors},
-  year={2024},
-  url={https://github.com/[username]/prompting-gold-standard/blob/main/Resources/references.md}
+  year={2025},
+  url={https://github.com/llMr-Sweetll/Prompting-Gold-Standard/blob/main/Resources/references.md}
 }
 ```
 
