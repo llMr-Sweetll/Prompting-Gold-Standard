@@ -10,7 +10,7 @@
 ║    🎭 "From algorithms to architecture, from debugging to     ║
 ║       deployment - this is your coding adventure awaits!"    ║
 ║                                                              ║
-║    🚀 "To infinity and beyond in the world of programming!"  ║
+║    🚀 "Debugging the matrix, one line at a time!"             ║
 ║       - Mr. Sweet, Code Explorer Extraordinaire               ║
 ║                                                              ║
 ╚══════════════════════════════════════════════════════════════╝

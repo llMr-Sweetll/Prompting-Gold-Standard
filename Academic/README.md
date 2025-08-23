@@ -10,7 +10,8 @@
 ║    🎭 "From physics to philosophy, from art to algorithms,    ║
 ║       this is your gateway to AI-powered scholarship!"       ║
 ║                                                              ║
-║    💫 "To infinity and beyond in academic discovery!"        ║
+║    💫 "Knowledge is our rocket fuel - let's launch into       ║
+║       academic excellence!"                                  ║
 ║       - Mr. Sweet, Academic AI Explorer                      ║
 ║                                                              ║
 ╚══════════════════════════════════════════════════════════════╝

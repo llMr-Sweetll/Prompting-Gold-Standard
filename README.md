@@ -26,7 +26,7 @@
    Whether you're a researcher, developer, or innovator, you'll
    find everything you need to unleash the full potential of AI!"
 
-🌟 "To infinity and beyond in the world of AI prompting!"
+🌟 "Where AI meets human creativity - let's craft prompts that inspire!"
    - Mr. Sweet, AI Prompting Pioneer
 
 🚀 Ready to embark on your AI prompting adventure? Let's begin!
