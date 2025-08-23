@@ -1,20 +1,21 @@
-# 🚀 Prompting-Gold-Standard 🚀
+<!-- ANIMATED BANNER -->
+<p align="center">
+  <img src="https://media.giphy.com/media/QNFhOolVeCzPQ2Mx85/giphy.gif" width="100%" alt="Prompting Gold Standard - Animated Banner"/>
+</p>
 
-## 🎉 **Mr. Sweet's Ultimate Guide to AI Prompting** 🎉
+<h1 align="center">Prompting Gold Standard 
+  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"/>
+</h1>
+<p align="center">
+  <a href="https://github.com/llMr-Sweetll"><img src="https://img.shields.io/github/followers/llMr-Sweetll?style=for-the-badge&logo=github"></a>
+  <img src="https://img.shields.io/github/stars/llMr-Sweetll/Prompting-Gold-Standard?style=for-the-badge&color=ff69b4">
+  <img src="https://img.shields.io/github/license/llMr-Sweetll/Prompting-Gold-Standard?style=for-the-badge">
+</p>
 
-```
-╔══════════════════════════════════════════════════════════════╗
-║                                                              ║
-║    🌟  T O   I N F I N I T Y   A N D   B E Y O N D !  🌟      ║
-║                                                              ║
-║     ✨ Advanced Prompt & Context Engineering for LLMs ✨     ║
-║                                                              ║
-║     🎓 Academic Workflows • 💻 Enterprise Solutions • 🚀     ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
-```
+---
 
-### 🎨 **Animated Welcome from Mr. Sweet!** 🎨
+
+### 🎨 **Welcome from Mr. Sweet!** 🎨
 
 ```
 ⚡ Loading Mr. Sweet's AI Prompting Universe... ⚡
