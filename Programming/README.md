@@ -285,3 +285,20 @@ Regular updates based on:
 *This guide is specifically crafted for senior developers who demand production-grade solutions. Each technique is battle-tested and optimized for real-world enterprise applications.*
 
 **Last Updated: August 2025**
+ 
+**New Engineering Additions**
+- Guides for production operations
+  - `Guides/prompt-ops-and-versioning.md`: Prompt specs, A/B tests, rollout checklists, prompt lint
+  - `Guides/self-critique-and-evaluation.md`: rubric‑oriented generation, adversarial red‑teaming, CI JSON evals
+- CI and evaluation
+  - `Examples/quickstarts/ci-eval-github-actions.md`: GitHub Actions to gate accuracy/integrity thresholds
+  - `JSON-Schemas/prompt-eval-rubric.json`: contract for automated scoring in pipelines
+- Data and knowledge workflows
+  - `Applications/data-analysis-and-visualization.md`: plans, metrics, Vega‑Lite specs
+  - `JSON-Schemas/data-analysis-report.json`: typed report output
+  - `Examples/quickstarts/run_analysis.{sh,ps1}`: one‑click analysis/report+chart generation
+  - `Applications/knowledge-base-construction.md`: entities/relations, source trust graphs, update planning
+  - `Examples/quickstarts/run_kb.{sh,ps1}`: one‑click KB extraction and updates
+- Orchestration
+  - `Makefile`: `make rag|paper|analysis|kb` with `PROVIDER`, `MODEL` flags
+  - `run.ps1`: meta‑runner for Windows environments

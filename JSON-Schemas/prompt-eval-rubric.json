@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "prompt-eval-rubric.json",
+  "title": "Prompt Evaluation Rubric",
+  "type": "object",
+  "properties": {
+    "score": {"type": "number", "minimum": 0, "maximum": 5},
+    "criteria": {
+      "type": "object",
+      "properties": {
+        "accuracy": {"type": "object", "properties": {"score": {"type": "number"}, "notes": {"type": "string"}}, "required": ["score"]},
+        "completeness": {"type": "object", "properties": {"score": {"type": "number"}, "notes": {"type": "string"}}, "required": ["score"]},
+        "clarity": {"type": "object", "properties": {"score": {"type": "number"}, "notes": {"type": "string"}}, "required": ["score"]},
+        "integrity": {"type": "object", "properties": {"score": {"type": "number"}, "notes": {"type": "string"}}, "required": ["score"]},
+        "actionability": {"type": "object", "properties": {"score": {"type": "number"}, "notes": {"type": "string"}}, "required": ["score"]}
+      },
+      "required": ["accuracy", "completeness", "clarity", "integrity", "actionability"]
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {"type": "string"},
+          "span": {"type": "string"},
+          "fix": {"type": "string"}
+        },
+        "required": ["type", "fix"]
+      }
+    }
+  },
+  "required": ["score", "criteria"]
+}

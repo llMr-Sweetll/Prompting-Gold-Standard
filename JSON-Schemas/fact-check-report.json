@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://prompting-gold-standard.com/schemas/fact-check-report.json",
+  "title": "Fact Check Report",
+  "type": "object",
+  "properties": {
+    "document_id": { "type": "string" },
+    "checked_at": { "type": "string", "format": "date-time" },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "claim": { "type": "string" },
+          "status": { "type": "string", "enum": ["verified", "partially_verified", "unverified", "disputed"] },
+          "evidence": { "type": "string" },
+          "source": { "type": "string" },
+          "retrieved_at": { "type": "string", "format": "date-time" },
+          "notes": { "type": "string" }
+        },
+        "required": ["claim", "status"]
+      }
+    }
+  }
+}
+

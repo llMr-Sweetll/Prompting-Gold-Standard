@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://prompting-gold-standard.com/schemas/citation-metadata.json",
+  "title": "Citation Metadata",
+  "type": "object",
+  "properties": {
+    "style": { "type": "string", "description": "APA, MLA, Chicago, IEEE, etc." },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "authors": { "type": "array", "items": { "type": "string" } },
+          "year": { "type": "integer" },
+          "publisher_or_venue": { "type": "string" },
+          "doi": { "type": "string" },
+          "url": { "type": "string" },
+          "retrieved_at": { "type": "string", "format": "date-time" },
+          "notes": { "type": "string" }
+        },
+        "required": ["title"]
+      }
+    }
+  }
+}
+

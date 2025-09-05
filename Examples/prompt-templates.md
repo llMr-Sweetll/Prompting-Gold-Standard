@@ -2265,3 +2265,24 @@ Conduct comprehensive legal research and analysis for the following matter:
 ```
 
 Remember: These templates serve as starting points and should be customized to fit specific needs and contexts. The most effective prompts are those that are carefully adapted to the unique requirements of each situation.
+
+## Quickstarts
+
+Jump straight from templates to working, end-to-end workflows:
+
+- RAG → Rubric → Doc: `Examples/quickstarts/rag-rubric-docs.md`
+- Academic Paper (RAG → LaTeX → Zotero): `Examples/quickstarts/academic-paper-rag-latex-zotero.md`
+- Data Analysis Report + Charts: `Examples/quickstarts/data-analysis-report-and-charts.md`
+- Knowledge Base Graph + Update Plan: `Examples/quickstarts/kb-graph-update.md`
+- CI Evaluation (GitHub Actions): `Examples/quickstarts/ci-eval-github-actions.md`
+- Local/Offline (Ollama): `Examples/quickstarts/local-ollama.md`
+
+One-click runners (Bash/PowerShell):
+- `Examples/quickstarts/run_rag.sh` | `Examples/quickstarts/run_rag.ps1`
+- `Examples/quickstarts/run_paper.sh` | `Examples/quickstarts/run_paper.ps1`
+- `Examples/quickstarts/run_analysis.sh` | `Examples/quickstarts/run_analysis.ps1`
+- `Examples/quickstarts/run_kb.sh` | `Examples/quickstarts/run_kb.ps1`
+
+Or use orchestrators:
+- Make: `make rag|paper|analysis|kb` (see `Makefile`)
+- PowerShell meta-runner: `./run.ps1 -Flow rag|paper|analysis|kb -Provider openai|anthropic|azure|ollama`

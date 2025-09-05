@@ -325,3 +325,17 @@ This academic guide is designed to grow with community input:
 **This guide is specifically designed to enhance human scholarship across all academic disciplines while maintaining the highest standards of academic integrity and research quality.** 🎓📚🔬🎨
 
 *Last Updated: August 2025*
+ 
+**New Tools & Quickstarts**
+- Academic software integration
+  - `Academic/Software-Integration/overleaf-latex-prompts.md`: compile‑safe LaTeX sections, figure/table stubs
+  - `Academic/Software-Integration/zotero-citation-workflows.md`: dedup imports, integrity checks, reading queue
+  - `Academic/Software-Integration/jupyter-notebook-workflows.md`: reproducible notebook cells and exports
+- End‑to‑end quickstarts
+  - `Examples/quickstarts/academic-paper-rag-latex-zotero.md`: RAG → LaTeX → Zotero TODO (copy‑paste scripts)
+  - `Examples/quickstarts/rag-rubric-docs.md`: grounded answers → rubric scoring → research brief
+  - `Examples/quickstarts/local-ollama.md`: offline/local RAG → Eval → Brief
+- One‑click runners
+  - `Examples/quickstarts/run_paper.sh` and `Examples/quickstarts/run_paper.ps1`: generate `paper.tex` + `zotero_todo.md`
+  - `Examples/quickstarts/run_rag.sh` and `Examples/quickstarts/run_rag.ps1`: produce `rag_answer.md`, `evaluation.json`, `research_brief.md`
+  - `run.ps1`: PowerShell meta‑runner `-Flow paper|rag` with `-Provider openai|anthropic|azure|ollama`

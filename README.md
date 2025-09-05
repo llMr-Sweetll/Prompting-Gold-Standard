@@ -180,3 +180,46 @@ This work is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) f
 *Remember: AI is a powerful tool, but human judgment, critical thinking, and ethical considerations remain essential for producing high-quality, trustworthy work.*
 
 ---
+**What's New (Advanced Additions)**
+- Guides: powerful new prompt libraries
+  - `Guides/retrieval-augmented-generation.md`: grounded RAG patterns with citations, audit trails, and hallucination guards
+  - `Guides/self-critique-and-evaluation.md`: two‑pass self‑review, rubric scoring, adversarial red‑teaming
+  - `Guides/prompt-ops-and-versioning.md`: PromptOps, versioning, A/B tests, rollout checklists
+- Applications: expanded workflows
+  - `Applications/data-analysis-and-visualization.md`: reproducible analysis plans, Vega‑Lite chart specs, decision memos
+  - `Applications/technical-documentation.md`: API docs, changelog drafting, doc linting
+  - `Applications/knowledge-base-construction.md`: entity/relation extraction, trust graphs, update plans
+- Academic Software Integration: ready-to-use patterns
+  - `Academic/Software-Integration/overleaf-latex-prompts.md`: compile‑safe LaTeX sections, figures, tables
+  - `Academic/Software-Integration/zotero-citation-workflows.md`: deduped imports, integrity checks, reading queues
+  - `Academic/Software-Integration/jupyter-notebook-workflows.md`: reproducible notebook skeletons, exportable figures
+- Examples: quickstarts and reusable libraries
+  - `Examples/quickstarts/`: end‑to‑end guides with copy‑paste Bash/PowerShell for OpenAI/Azure/Anthropic/Ollama
+    - `Examples/quickstarts/rag-rubric-docs.md`: RAG → rubric eval → research brief (+ one‑block scripts)
+    - `Examples/quickstarts/academic-paper-rag-latex-zotero.md`: RAG → LaTeX → Zotero TODO
+    - `Examples/quickstarts/data-analysis-report-and-charts.md`: analysis plan/report → Vega‑Lite
+    - `Examples/quickstarts/kb-graph-update.md`: KB entities/relations → trust graph → update plan
+    - `Examples/quickstarts/ci-eval-github-actions.md`: CI gate with rubric thresholds
+    - `Examples/quickstarts/local-ollama.md`: full offline/local pipeline
+  - `Examples/rubrics.md`: scoring rubrics; `Examples/personas.md`: system personas
+  - `Examples/red-teaming-scenarios.md`: stress tests; `Examples/prompt-review-checklist.md`: ship‑list
+- JSON Schemas: programmatic integration
+  - `JSON-Schemas/prompt-eval-rubric.json`: rubric contract for CI and eval dashboards
+  - `JSON-Schemas/data-analysis-report.json`: structured reports with chart specs
+- Orchestration: one‑click runners
+  - `Examples/quickstarts/run_rag.sh` and `Examples/quickstarts/run_rag.ps1`: RAG → Eval → Brief
+  - `Examples/quickstarts/run_paper.sh` and `Examples/quickstarts/run_paper.ps1`: LaTeX + Zotero
+  - `Examples/quickstarts/run_analysis.sh` and `Examples/quickstarts/run_analysis.ps1`: analysis + charts
+  - `Examples/quickstarts/run_kb.sh` and `Examples/quickstarts/run_kb.ps1`: KB extraction + updates
+  - `Makefile`: `make rag|paper|analysis|kb` with provider/model flags
+  - `run.ps1`: PowerShell meta‑runner `-Flow rag|paper|analysis|kb`
+
+**Quickstart Usage**
+- OpenAI (Bash): set `OPENAI_API_KEY`, then run `make rag PROVIDER=openai MODEL=gpt-4o-mini`
+- Azure OpenAI (Bash): set `AZURE_OPENAI_*` vars, then `make analysis PROVIDER=azure`
+- Anthropic (Bash): set `ANTHROPIC_API_KEY`, then `make kb PROVIDER=anthropic`
+- PowerShell: `./run.ps1 -Flow paper -Provider openai -Topic "Your topic"`
+
+**Notes**
+- Dependencies: Bash quickstarts use `curl` and `jq`; PowerShell uses built‑ins.
+- Validation: optional JSON validation via `jsonschema`/`ajv` is included in guides.

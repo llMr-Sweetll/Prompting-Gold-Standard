@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://prompting-gold-standard.com/schemas/style-audit.json",
+  "title": "Human-like Style Audit",
+  "type": "object",
+  "properties": {
+    "readability": { "type": "number", "minimum": 0, "maximum": 100, "description": "Flesch-like score" },
+    "sentence_variability": { "type": "number", "minimum": 0, "maximum": 1 },
+    "vocabulary_diversity": { "type": "number", "minimum": 0, "maximum": 1 },
+    "passive_voice_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+    "jargon_density": { "type": "number", "minimum": 0, "maximum": 1 },
+    "flagged_patterns": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "string" }
+  }
+}
+

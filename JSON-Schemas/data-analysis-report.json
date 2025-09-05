@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "data-analysis-report.json",
+  "title": "Data Analysis Report",
+  "type": "object",
+  "properties": {
+    "summary": {"type": "string"},
+    "findings": {"type": "array", "items": {"type": "string"}},
+    "metrics": {"type": "object", "additionalProperties": {"type": "number"}},
+    "charts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {"type": "string"},
+          "vegaLiteSpec": {"type": "object"},
+          "altText": {"type": "string"}
+        },
+        "required": ["title", "vegaLiteSpec"]
+      }
+    },
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "nextSteps": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": ["summary", "findings", "assumptions"]
+}
