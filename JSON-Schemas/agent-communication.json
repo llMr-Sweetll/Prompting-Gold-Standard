@@ -1,0 +1,303 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/llMr-Sweetll/Prompting-Gold-Standard/schemas/agent-communication.json",
+  "title": "Agent Communication Schema",
+  "description": "Standardized schema for inter-agent communication in multi-agent AI systems",
+  "type": "object",
+  "properties": {
+    "message_id": {
+      "type": "string",
+      "description": "Unique identifier for this message",
+      "pattern": "^[a-zA-Z0-9_-]{8,64}$"
+    },
+
+    "sender_agent": {
+      "type": "string",
+      "description": "Name/ID of the sending agent",
+      "minLength": 1,
+      "maxLength": 100
+    },
+
+    "recipient_agent": {
+      "type": "string",
+      "description": "Name/ID of the recipient agent, or 'all' for broadcast",
+      "minLength": 1,
+      "maxLength": 100
+    },
+
+    "message_type": {
+      "type": "string",
+      "enum": [
+        "task_assignment",
+        "progress_update",
+        "result_delivery",
+        "error_report",
+        "coordination_request",
+        "status_check",
+        "resource_request",
+        "collaboration_offer",
+        "consensus_vote",
+        "termination_notice"
+      ],
+      "description": "Type of message being sent"
+    },
+
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of message creation"
+    },
+
+    "content": {
+      "type": "object",
+      "description": "Main content payload of the message",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "description": "ID of the parent task this message relates to"
+        },
+
+        "data": {
+          "type": "object",
+          "description": "Primary data payload",
+          "additionalProperties": true
+        },
+
+        "metadata": {
+          "type": "object",
+          "description": "Metadata about the message processing",
+          "properties": {
+            "confidence_score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Confidence score for the message content (0-1)"
+            },
+
+            "processing_time": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Time taken to generate this message (seconds)"
+            },
+
+            "resources_used": {
+              "type": "string",
+              "description": "Resources consumed (e.g., 'cpu:2gb, memory:4gb, tokens:1500')"
+            },
+
+            "model_version": {
+              "type": "string",
+              "description": "AI model version used to generate content"
+            },
+
+            "priority_level": {
+              "type": "string",
+              "enum": ["low", "medium", "high", "critical"],
+              "description": "Priority level of this message"
+            }
+          }
+        },
+
+        "context": {
+          "type": "object",
+          "description": "Additional context information",
+          "properties": {
+            "conversation_history": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "previous_message_id": { "type": "string" },
+                  "relationship": { "type": "string", "enum": ["follows", "responds_to", "references"] },
+                  "summary": { "type": "string", "description": "Brief summary of relationship" }
+                }
+              },
+              "description": "References to previous messages in conversation"
+            },
+
+            "shared_knowledge": {
+              "type": "object",
+              "description": "Shared knowledge or context between agents",
+              "additionalProperties": true
+            },
+
+            "domain_context": {
+              "type": "string",
+              "description": "Specific domain or context this message relates to"
+            }
+          }
+        }
+      },
+      "required": ["data"]
+    },
+
+    "requires_response": {
+      "type": "boolean",
+      "description": "Whether this message requires a response from recipient"
+    },
+
+    "response_deadline": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Deadline for response (if requires_response is true)"
+    },
+
+    "routing_instructions": {
+      "type": "object",
+      "description": "Instructions for message routing and handling",
+      "properties": {
+        "priority_queue": {
+          "type": "string",
+          "enum": ["immediate", "high", "normal", "low", "batch"],
+          "description": "Priority queue for message processing"
+        },
+
+        "delivery_guarantee": {
+          "type": "string",
+          "enum": ["at_most_once", "at_least_once", "exactly_once"],
+          "description": "Delivery guarantee level required"
+        },
+
+        "expiration_time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time after which this message expires"
+        },
+
+        "retry_policy": {
+          "type": "object",
+          "properties": {
+            "max_attempts": { "type": "integer", "minimum": 1, "maximum": 10 },
+            "backoff_strategy": {
+              "type": "string",
+              "enum": ["fixed", "exponential", "linear"]
+            },
+            "initial_delay": { "type": "number", "minimum": 0 }
+          }
+        }
+      }
+    },
+
+    "security_context": {
+      "type": "object",
+      "description": "Security and access control information",
+      "properties": {
+        "encryption_used": { "type": "boolean", "description": "Whether message is encrypted" },
+        "access_level": {
+          "type": "string",
+          "enum": ["public", "internal", "confidential", "restricted"],
+          "description": "Required access level to read this message"
+        },
+        "data_classification": {
+          "type": "string",
+          "enum": ["public", "internal", "confidential", "restricted"],
+          "description": "Classification level of data in message"
+        },
+        "authorized_agents": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of agents authorized to access this message"
+        }
+      }
+    },
+
+    "error_handling": {
+      "type": "object",
+      "description": "Error handling and recovery information",
+      "properties": {
+        "error_code": { "type": "string", "description": "Error code if this is an error message" },
+        "error_message": { "type": "string", "description": "Human-readable error description" },
+        "recovery_suggestions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Suggested recovery actions"
+        },
+        "escalation_path": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Agent hierarchy for escalation"
+        }
+      }
+    },
+
+    "performance_metrics": {
+      "type": "object",
+      "description": "Performance metrics for this message/communication",
+      "properties": {
+        "network_latency": { "type": "number", "minimum": 0, "description": "Network latency in milliseconds" },
+        "processing_latency": { "type": "number", "minimum": 0, "description": "Processing latency in milliseconds" },
+        "message_size": { "type": "integer", "minimum": 0, "description": "Message size in bytes" },
+        "compression_ratio": { "type": "number", "minimum": 0, "maximum": 1, "description": "Compression ratio achieved" }
+      }
+    },
+
+    "traceability": {
+      "type": "object",
+      "description": "Audit trail and traceability information",
+      "properties": {
+        "trace_id": { "type": "string", "description": "Distributed trace ID for this message chain" },
+        "parent_trace_id": { "type": "string", "description": "Parent trace ID if this is a sub-message" },
+        "correlation_id": { "type": "string", "description": "Correlation ID for related messages" },
+        "originating_task": { "type": "string", "description": "Original task that spawned this message chain" },
+        "message_chain": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Chain of message IDs leading to this message"
+        }
+      }
+    }
+  },
+
+  "required": [
+    "message_id",
+    "sender_agent",
+    "recipient_agent",
+    "message_type",
+    "timestamp",
+    "content",
+    "requires_response"
+  ],
+
+  "additionalProperties": false,
+
+  "definitions": {
+    "agent_capabilities": {
+      "type": "object",
+      "properties": {
+        "specializations": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "performance_metrics": {
+          "type": "object",
+          "properties": {
+            "accuracy": { "type": "number", "minimum": 0, "maximum": 1 },
+            "efficiency": { "type": "number", "minimum": 0 },
+            "reliability": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "supported_message_types": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "task_status": {
+      "type": "object",
+      "properties": {
+        "task_id": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "in_progress", "completed", "failed", "cancelled"]
+        },
+        "progress_percentage": { "type": "number", "minimum": 0, "maximum": 100 },
+        "estimated_completion": { "type": "string", "format": "date-time" },
+        "dependencies": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

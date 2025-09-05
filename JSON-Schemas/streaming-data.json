@@ -1,0 +1,408 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/llMr-Sweetll/Prompting-Gold-Standard/schemas/streaming-data.json",
+  "title": "Streaming Data Schema",
+  "description": "Schema for real-time streaming data processing, validation, and analytics",
+  "type": "object",
+  "properties": {
+    "stream_metadata": {
+      "type": "object",
+      "description": "Metadata about the data stream configuration",
+      "properties": {
+        "stream_id": { "type": "string", "description": "Unique identifier for the data stream" },
+        "stream_name": { "type": "string", "description": "Human-readable stream name" },
+        "data_source": { "type": "string", "description": "Source system or sensor network" },
+        "data_source_type": {
+          "type": "string",
+          "enum": ["iot_sensors", "api_endpoints", "message_queue", "database_cdc", "log_files", "other"],
+          "description": "Type of data source"
+        },
+        "expected_rate": {
+          "type": "object",
+          "properties": {
+            "events_per_second": { "type": "number", "minimum": 0 },
+            "bytes_per_second": { "type": "number", "minimum": 0 },
+            "peak_events_per_second": { "type": "number", "minimum": 0 }
+          }
+        },
+        "created_at": { "type": "string", "format": "date-time" },
+        "last_updated": { "type": "string", "format": "date-time" }
+      },
+      "required": ["stream_id", "data_source", "data_source_type"]
+    },
+
+    "data_schema": {
+      "type": "object",
+      "description": "Schema definition for individual data events",
+      "properties": {
+        "event_format": {
+          "type": "string",
+          "enum": ["json", "avro", "protobuf", "csv", "xml", "custom"],
+          "description": "Format of individual data events"
+        },
+        "schema_definition": {
+          "type": "object",
+          "description": "Schema definition for event structure",
+          "additionalProperties": true
+        },
+        "required_fields": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of required fields in each event"
+        },
+        "field_mappings": {
+          "type": "object",
+          "description": "Field name mappings and transformations",
+          "additionalProperties": { "type": "string" }
+        },
+        "data_types": {
+          "type": "object",
+          "description": "Expected data types for each field",
+          "additionalProperties": {
+            "type": "string",
+            "enum": ["string", "number", "integer", "boolean", "date", "timestamp", "array", "object"]
+          }
+        }
+      },
+      "required": ["event_format"]
+    },
+
+    "processing_pipeline": {
+      "type": "object",
+      "description": "Configuration for stream processing pipeline",
+      "properties": {
+        "processing_mode": {
+          "type": "string",
+          "enum": ["real_time", "near_real_time", "batch", "micro_batch"],
+          "description": "Processing mode for the stream"
+        },
+        "windowing_strategy": {
+          "type": "object",
+          "properties": {
+            "window_type": {
+              "type": "string",
+              "enum": ["tumbling", "sliding", "session", "global"],
+              "description": "Type of time window for aggregation"
+            },
+            "window_size_seconds": { "type": "number", "minimum": 1 },
+            "slide_interval_seconds": { "type": "number", "minimum": 1 },
+            "grace_period_seconds": { "type": "number", "minimum": 0 }
+          }
+        },
+        "transformations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "transformation_type": {
+                "type": "string",
+                "enum": ["filter", "map", "aggregate", "join", "enrich", "split"],
+                "description": "Type of data transformation"
+              },
+              "field": { "type": "string", "description": "Target field for transformation" },
+              "operation": { "type": "string", "description": "Transformation operation" },
+              "parameters": {
+                "type": "object",
+                "description": "Additional parameters for the transformation",
+                "additionalProperties": true
+              }
+            },
+            "required": ["transformation_type"]
+          }
+        },
+        "quality_checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "check_type": {
+                "type": "string",
+                "enum": ["completeness", "accuracy", "consistency", "timeliness", "validity"],
+                "description": "Type of quality check"
+              },
+              "field": { "type": "string", "description": "Field to check" },
+              "rule": { "type": "string", "description": "Quality check rule" },
+              "action_on_failure": {
+                "type": "string",
+                "enum": ["drop", "quarantine", "alert", "correct", "ignore"],
+                "description": "Action to take when quality check fails"
+              }
+            }
+          }
+        }
+      },
+      "required": ["processing_mode"]
+    },
+
+    "analytics_configuration": {
+      "type": "object",
+      "description": "Configuration for real-time analytics and anomaly detection",
+      "properties": {
+        "metrics_to_calculate": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "metric_name": { "type": "string", "description": "Name of the metric" },
+              "metric_type": {
+                "type": "string",
+                "enum": ["count", "sum", "avg", "min", "max", "stddev", "percentile"],
+                "description": "Type of aggregation metric"
+              },
+              "field": { "type": "string", "description": "Field to calculate metric on" },
+              "window": { "type": "string", "description": "Time window for calculation" }
+            },
+            "required": ["metric_name", "metric_type", "field"]
+          }
+        },
+        "anomaly_detection": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "description": "Enable anomaly detection" },
+            "algorithm": {
+              "type": "string",
+              "enum": ["zscore", "isolation_forest", "autoencoder", "prophet", "custom"],
+              "description": "Anomaly detection algorithm"
+            },
+            "sensitivity": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Sensitivity level for anomaly detection (0-1)"
+            },
+            "training_window": { "type": "string", "description": "Time window for training baseline" },
+            "alert_threshold": { "type": "number", "minimum": 0, "description": "Threshold for triggering alerts" }
+          }
+        },
+        "predictive_modeling": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "description": "Enable predictive modeling" },
+            "model_type": {
+              "type": "string",
+              "enum": ["linear_regression", "time_series", "classification", "clustering"],
+              "description": "Type of predictive model"
+            },
+            "target_field": { "type": "string", "description": "Field to predict" },
+            "feature_fields": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Fields to use as features"
+            },
+            "prediction_horizon": { "type": "string", "description": "Time horizon for predictions" }
+          }
+        }
+      }
+    },
+
+    "alerting_configuration": {
+      "type": "object",
+      "description": "Configuration for alerting and notification systems",
+      "properties": {
+        "alert_rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "rule_name": { "type": "string", "description": "Unique name for the alert rule" },
+              "condition": { "type": "string", "description": "Alert trigger condition" },
+              "severity": {
+                "type": "string",
+                "enum": ["info", "warning", "error", "critical"],
+                "description": "Alert severity level"
+              },
+              "threshold": { "type": "number", "description": "Threshold value for triggering alert" },
+              "cooldown_period": { "type": "string", "description": "Cooldown period between alerts" },
+              "escalation_policy": {
+                "type": "object",
+                "properties": {
+                  "initial_channels": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Initial notification channels"
+                  },
+                  "escalation_time": { "type": "string", "description": "Time before escalation" },
+                  "escalation_channels": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "Escalation notification channels"
+                  }
+                }
+              }
+            },
+            "required": ["rule_name", "condition", "severity"]
+          }
+        },
+        "notification_channels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "channel_type": {
+                "type": "string",
+                "enum": ["email", "slack", "webhook", "sms", "pagerduty", "opsgenie"],
+                "description": "Type of notification channel"
+              },
+              "channel_config": {
+                "type": "object",
+                "description": "Channel-specific configuration",
+                "additionalProperties": true
+              },
+              "enabled": { "type": "boolean", "description": "Whether this channel is enabled" }
+            }
+          }
+        },
+        "alert_suppression": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "description": "Enable alert suppression" },
+            "suppression_window": { "type": "string", "description": "Time window for alert suppression" },
+            "max_alerts_per_window": { "type": "integer", "minimum": 1, "description": "Maximum alerts per suppression window" }
+          }
+        }
+      }
+    },
+
+    "scaling_configuration": {
+      "type": "object",
+      "description": "Configuration for auto-scaling and performance optimization",
+      "properties": {
+        "auto_scaling": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "description": "Enable auto-scaling" },
+            "min_instances": { "type": "integer", "minimum": 1 },
+            "max_instances": { "type": "integer", "minimum": 1 },
+            "scale_up_threshold": { "type": "number", "minimum": 0, "maximum": 1 },
+            "scale_down_threshold": { "type": "number", "minimum": 0, "maximum": 1 },
+            "cooldown_period": { "type": "string", "description": "Cooldown between scaling actions" }
+          }
+        },
+        "performance_targets": {
+          "type": "object",
+          "properties": {
+            "max_latency_ms": { "type": "number", "minimum": 0 },
+            "target_throughput": { "type": "number", "minimum": 0 },
+            "max_error_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+            "min_uptime_percentage": { "type": "number", "minimum": 0, "maximum": 100 }
+          }
+        },
+        "resource_limits": {
+          "type": "object",
+          "properties": {
+            "max_cpu_percent": { "type": "number", "minimum": 0, "maximum": 100 },
+            "max_memory_mb": { "type": "number", "minimum": 0 },
+            "max_network_mbps": { "type": "number", "minimum": 0 },
+            "max_storage_gb": { "type": "number", "minimum": 0 }
+          }
+        }
+      }
+    },
+
+    "monitoring_configuration": {
+      "type": "object",
+      "description": "Configuration for monitoring, logging, and observability",
+      "properties": {
+        "metrics_collection": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean", "description": "Enable metrics collection" },
+            "collection_interval": { "type": "string", "description": "Metrics collection interval" },
+            "metrics_to_collect": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["throughput", "latency", "error_rate", "cpu_usage", "memory_usage", "queue_depth"]
+              }
+            }
+          }
+        },
+        "logging_configuration": {
+          "type": "object",
+          "properties": {
+            "log_level": {
+              "type": "string",
+              "enum": ["debug", "info", "warn", "error"],
+              "description": "Logging level"
+            },
+            "log_retention_days": { "type": "integer", "minimum": 1 },
+            "structured_logging": { "type": "boolean", "description": "Enable structured logging" }
+          }
+        },
+        "health_checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "check_name": { "type": "string", "description": "Name of health check" },
+              "check_type": {
+                "type": "string",
+                "enum": ["http", "tcp", "custom"],
+                "description": "Type of health check"
+              },
+              "endpoint": { "type": "string", "description": "Endpoint to check" },
+              "interval_seconds": { "type": "integer", "minimum": 1 },
+              "timeout_seconds": { "type": "integer", "minimum": 1 },
+              "failure_threshold": { "type": "integer", "minimum": 1 }
+            }
+          }
+        }
+      }
+    },
+
+    "data_retention": {
+      "type": "object",
+      "description": "Configuration for data retention and archival",
+      "properties": {
+        "raw_data_retention_days": { "type": "integer", "minimum": 1 },
+        "processed_data_retention_days": { "type": "integer", "minimum": 1 },
+        "metrics_retention_days": { "type": "integer", "minimum": 1 },
+        "archive_strategy": {
+          "type": "string",
+          "enum": ["delete", "compress", "cold_storage", "none"],
+          "description": "Strategy for handling expired data"
+        },
+        "backup_configuration": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean" },
+            "frequency": { "type": "string", "description": "Backup frequency" },
+            "retention_period": { "type": "string", "description": "Backup retention period" },
+            "destination": { "type": "string", "description": "Backup destination" }
+          }
+        }
+      }
+    },
+
+    "validation_results": {
+      "type": "object",
+      "description": "Schema validation and configuration verification results",
+      "properties": {
+        "schema_version": { "type": "string", "description": "JSON schema version used" },
+        "validation_passed": { "type": "boolean", "description": "Schema validation result" },
+        "configuration_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Configuration completeness score" },
+        "performance_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Expected performance score" },
+        "validation_errors": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Schema validation error messages"
+        },
+        "warnings": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Configuration warnings and recommendations"
+        }
+      },
+      "required": ["validation_passed"]
+    }
+  },
+
+  "required": [
+    "stream_metadata",
+    "data_schema",
+    "processing_pipeline",
+    "validation_results"
+  ],
+
+  "additionalProperties": false
+}

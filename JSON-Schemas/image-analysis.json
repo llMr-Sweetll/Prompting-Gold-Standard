@@ -1,0 +1,235 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/llMr-Sweetll/Prompting-Gold-Standard/schemas/image-analysis.json",
+  "title": "Image Analysis Schema",
+  "description": "Schema for structured image analysis results including quality metrics, content analysis, and clinical findings",
+  "type": "object",
+  "properties": {
+    "image_metadata": {
+      "type": "object",
+      "description": "Technical metadata about the analyzed image",
+      "properties": {
+        "filename": { "type": "string", "description": "Original image filename" },
+        "format": { "type": "string", "enum": ["JPEG", "PNG", "TIFF", "DICOM", "BMP"], "description": "Image format" },
+        "dimensions": {
+          "type": "object",
+          "properties": {
+            "width": { "type": "integer", "minimum": 1, "description": "Image width in pixels" },
+            "height": { "type": "integer", "minimum": 1, "description": "Image height in pixels" },
+            "resolution": { "type": "string", "description": "Resolution in DPI or pixels per unit" }
+          },
+          "required": ["width", "height"]
+        },
+        "file_size": { "type": "integer", "minimum": 0, "description": "File size in bytes" },
+        "timestamp": { "type": "string", "format": "date-time", "description": "Analysis timestamp" }
+      },
+      "required": ["filename", "format", "dimensions"]
+    },
+
+    "quality_assessment": {
+      "type": "object",
+      "description": "Technical quality metrics and assessment",
+      "properties": {
+        "overall_quality_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Overall quality score (0-100)"
+        },
+        "technical_metrics": {
+          "type": "object",
+          "properties": {
+            "resolution_score": { "type": "number", "minimum": 0, "maximum": 100 },
+            "contrast_score": { "type": "number", "minimum": 0, "maximum": 100 },
+            "brightness_score": { "type": "number", "minimum": 0, "maximum": 100 },
+            "noise_level": { "type": "number", "minimum": 0, "maximum": 100 },
+            "sharpness_score": { "type": "number", "minimum": 0, "maximum": 100 },
+            "artifact_detection": { "type": "boolean", "description": "Presence of artifacts" }
+          }
+        },
+        "diagnostic_suitability": {
+          "type": "string",
+          "enum": ["excellent", "good", "adequate", "poor", "unusable"],
+          "description": "Suitability for intended diagnostic or analysis purpose"
+        },
+        "preprocessing_recommendations": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Recommended preprocessing steps"
+        }
+      },
+      "required": ["overall_quality_score", "diagnostic_suitability"]
+    },
+
+    "content_analysis": {
+      "type": "object",
+      "description": "Detailed content analysis and findings",
+      "properties": {
+        "primary_content_type": {
+          "type": "string",
+          "enum": ["medical", "scientific", "document", "photograph", "artwork", "technical", "natural", "other"],
+          "description": "Primary content classification"
+        },
+        "content_description": {
+          "type": "string",
+          "description": "Detailed textual description of image content"
+        },
+        "key_elements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "element_type": { "type": "string", "description": "Type of element (person, object, text, etc.)" },
+              "description": { "type": "string", "description": "Element description" },
+              "location": {
+                "type": "object",
+                "properties": {
+                  "x": { "type": "number", "minimum": 0, "maximum": 1, "description": "Relative X coordinate (0-1)" },
+                  "y": { "type": "number", "minimum": 0, "maximum": 1, "description": "Relative Y coordinate (0-1)" },
+                  "width": { "type": "number", "minimum": 0, "maximum": 1, "description": "Relative width (0-1)" },
+                  "height": { "type": "number", "minimum": 0, "maximum": 1, "description": "Relative height (0-1)" }
+                }
+              },
+              "confidence": { "type": "number", "minimum": 0, "maximum": 1, "description": "Confidence score (0-1)" }
+            },
+            "required": ["element_type", "description", "confidence"]
+          }
+        },
+        "text_content": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": { "type": "string", "description": "Extracted text content" },
+              "location": {
+                "type": "object",
+                "properties": {
+                  "x": { "type": "number", "minimum": 0, "maximum": 1 },
+                  "y": { "type": "number", "minimum": 0, "maximum": 1 },
+                  "width": { "type": "number", "minimum": 0, "maximum": 1 },
+                  "height": { "type": "number", "minimum": 0, "maximum": 1 }
+                }
+              },
+              "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+              "language": { "type": "string", "description": "Detected language code" }
+            }
+          },
+          "description": "OCR results for any text in the image"
+        }
+      },
+      "required": ["primary_content_type", "content_description"]
+    },
+
+    "domain_specific_analysis": {
+      "type": "object",
+      "description": "Domain-specific analysis results (medical, technical, etc.)",
+      "properties": {
+        "domain": {
+          "type": "string",
+          "enum": ["medical", "scientific", "technical", "art", "document", "photography", "industrial", "other"],
+          "description": "Analysis domain"
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "finding_type": { "type": "string", "description": "Type of finding (abnormality, feature, etc.)" },
+              "description": { "type": "string", "description": "Detailed finding description" },
+              "severity": {
+                "type": "string",
+                "enum": ["critical", "high", "medium", "low", "normal"],
+                "description": "Finding severity level"
+              },
+              "location": {
+                "type": "object",
+                "properties": {
+                  "region": { "type": "string", "description": "Anatomical or structural region" },
+                  "coordinates": {
+                    "type": "object",
+                    "properties": {
+                      "x": { "type": "number", "minimum": 0, "maximum": 1 },
+                      "y": { "type": "number", "minimum": 0, "maximum": 1 },
+                      "width": { "type": "number", "minimum": 0, "maximum": 1 },
+                      "height": { "type": "number", "minimum": 0, "maximum": 1 }
+                    }
+                  }
+                }
+              },
+              "measurements": {
+                "type": "object",
+                "description": "Quantitative measurements",
+                "additionalProperties": { "type": ["number", "string"] }
+              },
+              "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+              "clinical_significance": { "type": "string", "description": "Clinical or practical significance" }
+            },
+            "required": ["finding_type", "description", "confidence"]
+          }
+        },
+        "recommendations": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Actionable recommendations based on analysis"
+        },
+        "differential_diagnosis": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "condition": { "type": "string", "description": "Possible condition or classification" },
+              "probability": { "type": "number", "minimum": 0, "maximum": 1, "description": "Probability score" },
+              "evidence": { "type": "string", "description": "Supporting evidence" }
+            }
+          },
+          "description": "Differential diagnosis or classification options"
+        }
+      }
+    },
+
+    "processing_metadata": {
+      "type": "object",
+      "description": "Metadata about the analysis processing",
+      "properties": {
+        "model_used": { "type": "string", "description": "AI model used for analysis" },
+        "processing_time": { "type": "number", "minimum": 0, "description": "Processing time in seconds" },
+        "api_calls": { "type": "integer", "minimum": 0, "description": "Number of API calls made" },
+        "tokens_used": { "type": "integer", "minimum": 0, "description": "Total tokens consumed" },
+        "version": { "type": "string", "description": "Analysis pipeline version" },
+        "warnings": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Processing warnings or limitations"
+        }
+      },
+      "required": ["model_used", "processing_time"]
+    },
+
+    "validation_results": {
+      "type": "object",
+      "description": "Schema validation and quality assurance results",
+      "properties": {
+        "schema_version": { "type": "string", "description": "JSON schema version used" },
+        "validation_passed": { "type": "boolean", "description": "Schema validation result" },
+        "quality_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Overall output quality score" },
+        "completeness_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Data completeness score" },
+        "validation_errors": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Schema validation error messages"
+        }
+      },
+      "required": ["validation_passed"]
+    }
+  },
+
+  "required": [
+    "image_metadata",
+    "quality_assessment",
+    "content_analysis",
+    "processing_metadata",
+    "validation_results"
+  ],
+
+  "additionalProperties": false
+}
