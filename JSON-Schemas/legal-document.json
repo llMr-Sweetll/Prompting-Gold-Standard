@@ -1,0 +1,342 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/llMr-Sweetll/Prompting-Gold-Standard/schemas/legal-document.json",
+  "title": "Legal Document Schema",
+  "description": "Schema for legal document automation including contract analysis, risk assessment, and compliance verification",
+  "type": "object",
+  "properties": {
+    "document_metadata": {
+      "type": "object",
+      "description": "Metadata about the legal document",
+      "properties": {
+        "document_id": { "type": "string", "description": "Unique identifier for the document" },
+        "document_type": {
+          "type": "string",
+          "enum": ["contract", "agreement", "nda", "license", "service_agreement", "employment_contract", "vendor_agreement"],
+          "description": "Type of legal document"
+        },
+        "jurisdiction": {
+          "type": "string",
+          "description": "Primary governing jurisdiction"
+        },
+        "parties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string", "description": "Party name" },
+              "role": { "type": "string", "enum": ["party_a", "party_b", "licensor", "licensee", "vendor", "client"] },
+              "entity_type": { "type": "string", "enum": ["individual", "corporation", "llc", "partnership", "nonprofit"] }
+            }
+          }
+        },
+        "effective_date": { "type": "string", "format": "date", "description": "Contract effective date" },
+        "term_length": { "type": "string", "description": "Contract term duration" },
+        "value": { "type": "number", "description": "Contract value in USD" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "reviewed_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["document_id", "document_type", "jurisdiction"]
+    },
+
+    "contract_analysis": {
+      "type": "object",
+      "description": "Detailed contract clause analysis and extraction",
+      "properties": {
+        "clauses_identified": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "clause_type": {
+                "type": "string",
+                "enum": ["payment_terms", "termination", "liability", "indemnification", "ip_rights", "confidentiality", "data_protection", "force_majeure", "dispute_resolution", "governing_law"]
+              },
+              "clause_text": { "type": "string", "description": "Full clause text" },
+              "page_number": { "type": "integer", "minimum": 1 },
+              "section_reference": { "type": "string", "description": "Section and subsection reference" },
+              "key_terms": { "type": "array", "items": { "type": "string" }, "description": "Extracted key terms" },
+              "obligations": { "type": "array", "items": { "type": "string" }, "description": "Party obligations" },
+              "risk_indicators": { "type": "array", "items": { "type": "string" }, "description": "Potential risk areas" }
+            },
+            "required": ["clause_type", "clause_text"]
+          }
+        },
+        "financial_terms": {
+          "type": "object",
+          "properties": {
+            "payment_schedule": { "type": "string", "description": "Payment timing and amounts" },
+            "currency": { "type": "string", "description": "Transaction currency" },
+            "price_adjustments": { "type": "string", "description": "Price adjustment provisions" },
+            "taxes_liability": { "type": "string", "description": "Tax responsibility clauses" },
+            "late_payment_penalties": { "type": "string", "description": "Late payment consequences" }
+          }
+        },
+        "operational_terms": {
+          "type": "object",
+          "properties": {
+            "service_level_agreements": { "type": "string", "description": "SLA specifications" },
+            "termination_conditions": { "type": "string", "description": "Termination triggers and notice periods" },
+            "change_management": { "type": "string", "description": "Change control procedures" },
+            "performance_metrics": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "legal_terms": {
+          "type": "object",
+          "properties": {
+            "liability_limitations": { "type": "string", "description": "Liability caps and exclusions" },
+            "indemnification_scope": { "type": "string", "description": "Indemnification obligations" },
+            "ip_ownership": { "type": "string", "description": "Intellectual property rights" },
+            "confidentiality_requirements": { "type": "string", "description": "Confidentiality obligations" }
+          }
+        }
+      },
+      "required": ["clauses_identified"]
+    },
+
+    "risk_assessment": {
+      "type": "object",
+      "description": "Comprehensive legal risk analysis and mitigation strategies",
+      "properties": {
+        "financial_risks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk_type": { "type": "string", "description": "Type of financial risk" },
+              "description": { "type": "string", "description": "Risk description" },
+              "severity": { "type": "string", "enum": ["critical", "high", "medium", "low"] },
+              "probability": { "type": "string", "enum": ["high", "medium", "low"] },
+              "impact": { "type": "string", "description": "Potential financial impact" },
+              "mitigation_strategy": { "type": "string", "description": "Recommended mitigation approach" }
+            }
+          }
+        },
+        "operational_risks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk_type": { "type": "string", "description": "Type of operational risk" },
+              "description": { "type": "string", "description": "Risk description" },
+              "severity": { "type": "string", "enum": ["critical", "high", "medium", "low"] },
+              "probability": { "type": "string", "enum": ["high", "medium", "low"] },
+              "business_impact": { "type": "string", "description": "Operational impact assessment" },
+              "mitigation_strategy": { "type": "string", "description": "Recommended mitigation approach" }
+            }
+          }
+        },
+        "legal_risks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk_type": { "type": "string", "description": "Type of legal risk" },
+              "description": { "type": "string", "description": "Risk description" },
+              "severity": { "type": "string", "enum": ["critical", "high", "medium", "low"] },
+              "probability": { "type": "string", "enum": ["high", "medium", "low"] },
+              "legal_precedent": { "type": "string", "description": "Relevant legal precedents" },
+              "mitigation_strategy": { "type": "string", "description": "Recommended mitigation approach" }
+            }
+          }
+        },
+        "compliance_risks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "regulation": { "type": "string", "description": "Applicable regulation or standard" },
+              "risk_description": { "type": "string", "description": "Compliance risk details" },
+              "severity": { "type": "string", "enum": ["critical", "high", "medium", "low"] },
+              "non_compliance_penalty": { "type": "string", "description": "Potential penalties" },
+              "remediation_required": { "type": "boolean", "description": "Whether remediation is needed" },
+              "remediation_plan": { "type": "string", "description": "Remediation approach" }
+            }
+          }
+        },
+        "overall_risk_rating": {
+          "type": "object",
+          "properties": {
+            "composite_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Overall risk score (0-100)" },
+            "risk_level": { "type": "string", "enum": ["acceptable", "moderate", "high", "critical"] },
+            "recommendation": { "type": "string", "enum": ["proceed", "proceed_with_modifications", "negotiate_terms", "do_not_proceed"] },
+            "key_concerns": { "type": "array", "items": { "type": "string" }, "description": "Top risk concerns" }
+          },
+          "required": ["composite_score", "risk_level", "recommendation"]
+        }
+      },
+      "required": ["overall_risk_rating"]
+    },
+
+    "compliance_analysis": {
+      "type": "object",
+      "description": "Regulatory compliance verification and audit trail",
+      "properties": {
+        "gdpr_compliance": {
+          "type": "object",
+          "properties": {
+            "data_processing_agreement": { "type": "boolean", "description": "DPA presence" },
+            "lawful_basis_identified": { "type": "boolean", "description": "Lawful processing basis" },
+            "data_subject_rights": { "type": "boolean", "description": "DSR compliance" },
+            "international_transfers": { "type": "string", "description": "Transfer mechanism" },
+            "breach_notification": { "type": "boolean", "description": "Breach notification provisions" },
+            "compliance_score": { "type": "number", "minimum": 0, "maximum": 100 }
+          }
+        },
+        "ccpa_compliance": {
+          "type": "object",
+          "properties": {
+            "personal_information_definition": { "type": "boolean", "description": "PI definition clarity" },
+            "consumer_rights_implementation": { "type": "boolean", "description": "Rights implementation" },
+            "service_provider_requirements": { "type": "boolean", "description": "Vendor compliance" },
+            "data_protection_measures": { "type": "boolean", "description": "Security measures" },
+            "compliance_score": { "type": "number", "minimum": 0, "maximum": 100 }
+          }
+        },
+        "industry_specific_compliance": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "regulation": { "type": "string", "description": "Industry regulation" },
+              "applicable": { "type": "boolean", "description": "Whether regulation applies" },
+              "compliance_status": { "type": "string", "enum": ["compliant", "non_compliant", "requires_modification"] },
+              "required_actions": { "type": "array", "items": { "type": "string" } },
+              "compliance_score": { "type": "number", "minimum": 0, "maximum": 100 }
+            }
+          }
+        },
+        "audit_trail": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timestamp": { "type": "string", "format": "date-time" },
+              "action": { "type": "string", "description": "Audit action taken" },
+              "user": { "type": "string", "description": "User who performed action" },
+              "details": { "type": "string", "description": "Action details" },
+              "evidence": { "type": "string", "description": "Supporting evidence or reference" }
+            }
+          },
+          "description": "Compliance verification audit trail"
+        }
+      }
+    },
+
+    "negotiation_recommendations": {
+      "type": "object",
+      "description": "Contract negotiation priorities and recommended modifications",
+      "properties": {
+        "must_have_modifications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "clause": { "type": "string", "description": "Clause requiring modification" },
+              "current_text": { "type": "string", "description": "Current problematic text" },
+              "proposed_text": { "type": "string", "description": "Recommended replacement text" },
+              "rationale": { "type": "string", "description": "Business rationale" },
+              "priority": { "type": "string", "enum": ["critical", "high", "medium"] }
+            }
+          },
+          "description": "Non-negotiable required modifications"
+        },
+        "nice_to_have_modifications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "clause": { "type": "string", "description": "Clause for improvement" },
+              "improvement_suggestion": { "type": "string", "description": "Suggested improvement" },
+              "business_impact": { "type": "string", "description": "Expected business benefit" },
+              "negotiation_leverage": { "type": "string", "enum": ["high", "medium", "low"] }
+            }
+          },
+          "description": "Desirable but not essential modifications"
+        },
+        "negotiation_strategy": {
+          "type": "object",
+          "properties": {
+            "overall_approach": { "type": "string", "enum": ["collaborative", "competitive", "compromising"] },
+            "key_objectives": { "type": "array", "items": { "type": "string" } },
+            "walk_away_conditions": { "type": "array", "items": { "type": "string" } },
+            "communication_plan": { "type": "string", "description": "Negotiation communication strategy" }
+          }
+        }
+      }
+    },
+
+    "executive_summary": {
+      "type": "object",
+      "description": "Executive-level summary for decision makers",
+      "properties": {
+        "document_overview": {
+          "type": "string",
+          "description": "High-level document summary"
+        },
+        "key_terms_summary": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Most important contract terms"
+        },
+        "risk_summary": {
+          "type": "string",
+          "description": "Overall risk assessment summary"
+        },
+        "compliance_status": {
+          "type": "string",
+          "description": "Regulatory compliance overview"
+        },
+        "recommendations": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Key recommendations for decision makers"
+        },
+        "next_steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "action": { "type": "string", "description": "Required action" },
+              "responsible_party": { "type": "string", "description": "Who is responsible" },
+              "timeline": { "type": "string", "description": "When to complete" },
+              "priority": { "type": "string", "enum": ["urgent", "high", "medium", "low"] }
+            }
+          }
+        }
+      },
+      "required": ["document_overview", "risk_summary", "recommendations"]
+    },
+
+    "validation_results": {
+      "type": "object",
+      "description": "Analysis validation and quality assurance results",
+      "properties": {
+        "analysis_completeness": { "type": "number", "minimum": 0, "maximum": 100, "description": "Analysis completeness score" },
+        "risk_assessment_accuracy": { "type": "number", "minimum": 0, "maximum": 100, "description": "Risk assessment quality score" },
+        "compliance_coverage": { "type": "number", "minimum": 0, "maximum": 100, "description": "Compliance analysis coverage" },
+        "validation_errors": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Validation errors and issues"
+        },
+        "quality_improvements": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Suggested quality improvements"
+        },
+        "confidence_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Overall analysis confidence" }
+      },
+      "required": ["analysis_completeness", "confidence_score"]
+    }
+  },
+
+  "required": [
+    "document_metadata",
+    "contract_analysis",
+    "risk_assessment",
+    "validation_results"
+  ],
+
+  "additionalProperties": false
+}

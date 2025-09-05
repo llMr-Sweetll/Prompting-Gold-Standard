@@ -1,0 +1,458 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/llMr-Sweetll/Prompting-Gold-Standard/schemas/healthcare-rnd.json",
+  "title": "Healthcare R&D Schema",
+  "description": "Schema for healthcare R&D pipeline including drug discovery, clinical trials, and regulatory strategy",
+  "type": "object",
+  "properties": {
+    "project_metadata": {
+      "type": "object",
+      "description": "Project identification and basic information",
+      "properties": {
+        "project_id": { "type": "string", "description": "Unique project identifier" },
+        "project_name": { "type": "string", "description": "Project name" },
+        "therapeutic_area": {
+          "type": "string",
+          "enum": ["oncology", "cardiology", "neurology", "immunology", "infectious_diseases", "metabolic_disorders", "rare_diseases", "other"],
+          "description": "Primary therapeutic area"
+        },
+        "target_indication": { "type": "string", "description": "Specific disease or condition target" },
+        "development_stage": {
+          "type": "string",
+          "enum": ["target_identification", "hit_discovery", "lead_optimization", "preclinical", "phase_1", "phase_2", "phase_3", "nda_filing", "post_marketing"],
+          "description": "Current development stage"
+        },
+        "project_lead": { "type": "string", "description": "Project lead scientist" },
+        "budget_allocated": { "type": "number", "description": "Total project budget in USD" },
+        "timeline_months": { "type": "integer", "description": "Expected project timeline in months" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "last_updated": { "type": "string", "format": "date-time" }
+      },
+      "required": ["project_id", "project_name", "therapeutic_area", "development_stage"]
+    },
+
+    "drug_discovery": {
+      "type": "object",
+      "description": "Computational drug discovery and molecular modeling results",
+      "properties": {
+        "target_identification": {
+          "type": "object",
+          "properties": {
+            "target_protein": { "type": "string", "description": "Target protein name" },
+            "uniprot_id": { "type": "string", "description": "UniProt identifier" },
+            "target_family": { "type": "string", "description": "Protein family classification" },
+            "disease_association": { "type": "string", "description": "Disease-target association evidence" },
+            "validation_score": { "type": "number", "minimum": 0, "maximum": 1, "description": "Target validation confidence (0-1)" }
+          }
+        },
+        "molecular_modeling": {
+          "type": "object",
+          "properties": {
+            "binding_site_analysis": { "type": "string", "description": "Active site characterization" },
+            "docking_studies": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ligand": { "type": "string", "description": "Ligand molecule name" },
+                  "binding_affinity": { "type": "number", "description": "Binding affinity (kcal/mol)" },
+                  "binding_pose": { "type": "string", "description": "Molecular docking pose description" },
+                  "interactions": { "type": "array", "items": { "type": "string" }, "description": "Key molecular interactions" }
+                }
+              }
+            },
+            "structure_activity_relationships": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "structural_motif": { "type": "string", "description": "Chemical structure feature" },
+                  "activity_correlation": { "type": "string", "description": "Activity correlation analysis" },
+                  "optimization_potential": { "type": "string", "enum": ["high", "medium", "low"] }
+                }
+              }
+            }
+          }
+        },
+        "pharmacological_predictions": {
+          "type": "object",
+          "properties": {
+            "absorption_prediction": { "type": "number", "minimum": 0, "maximum": 100, "description": "Predicted absorption percentage" },
+            "distribution_prediction": { "type": "string", "description": "Distribution profile prediction" },
+            "metabolism_pathways": { "type": "array", "items": { "type": "string" }, "description": "Predicted metabolic pathways" },
+            "excretion_routes": { "type": "array", "items": { "type": "string" }, "description": "Predicted excretion routes" },
+            "toxicity_prediction": { "type": "string", "enum": ["low", "medium", "high"], "description": "Predicted toxicity risk" }
+          }
+        },
+        "hit_identification": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "compound_id": { "type": "string", "description": "Compound identifier" },
+              "smiles_string": { "type": "string", "description": "SMILES molecular representation" },
+              "ic50_value": { "type": "number", "description": "Half-maximal inhibitory concentration" },
+              "selectivity_ratio": { "type": "number", "description": "Target selectivity ratio" },
+              "drug_likeness_score": { "type": "number", "minimum": 0, "maximum": 1, "description": "Drug-likeness prediction (0-1)" }
+            }
+          },
+          "description": "Identified hit compounds from screening"
+        }
+      }
+    },
+
+    "preclinical_strategy": {
+      "type": "object",
+      "description": "Pre-clinical development strategy and ADMET assessment",
+      "properties": {
+        "admet_profile": {
+          "type": "object",
+          "properties": {
+            "absorption": {
+              "type": "object",
+              "properties": {
+                "caco2_permeability": { "type": "number", "description": "Caco-2 permeability (cm/s)" },
+                "solubility_prediction": { "type": "string", "enum": ["high", "medium", "low"] },
+                "oral_bioavailability": { "type": "number", "minimum": 0, "maximum": 100, "description": "Predicted oral bioavailability (%)" }
+              }
+            },
+            "distribution": {
+              "type": "object",
+              "properties": {
+                "plasma_protein_binding": { "type": "number", "minimum": 0, "maximum": 100, "description": "Plasma protein binding (%)" },
+                "blood_brain_barrier": { "type": "string", "enum": ["high_permeability", "moderate", "low_permeability"] },
+                "volume_distribution": { "type": "number", "description": "Volume of distribution (L/kg)" }
+              }
+            },
+            "metabolism": {
+              "type": "object",
+              "properties": {
+                "cyp_inhibition": { "type": "array", "items": { "type": "string" }, "description": "Predicted CYP enzyme inhibition" },
+                "hepatic_clearance": { "type": "number", "description": "Predicted hepatic clearance (mL/min/kg)" },
+                "metabolite_identification": { "type": "array", "items": { "type": "string" }, "description": "Predicted metabolites" }
+              }
+            },
+            "excretion": {
+              "type": "object",
+              "properties": {
+                "renal_clearance": { "type": "number", "description": "Predicted renal clearance (mL/min/kg)" },
+                "elimination_half_life": { "type": "number", "description": "Predicted half-life (hours)" },
+                "major_excretion_route": { "type": "string", "description": "Primary excretion pathway" }
+              }
+            },
+            "toxicity": {
+              "type": "object",
+              "properties": {
+                "hepatotoxicity_risk": { "type": "string", "enum": ["low", "medium", "high"] },
+                "cardiotoxicity_risk": { "type": "string", "enum": ["low", "medium", "high"] },
+                "genotoxicity_risk": { "type": "string", "enum": ["low", "medium", "high"] },
+                "mutagenicity_prediction": { "type": "boolean", "description": "Predicted mutagenic potential" }
+              }
+            }
+          }
+        },
+        "pharmacology_studies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "study_type": { "type": "string", "enum": ["in_vitro", "ex_vivo", "in_vivo", "animal_model"] },
+              "assay_description": { "type": "string", "description": "Study methodology" },
+              "key_findings": { "type": "string", "description": "Primary study results" },
+              "statistical_significance": { "type": "string", "description": "Statistical analysis results" },
+              "confidence_level": { "type": "number", "minimum": 0, "maximum": 100, "description": "Result confidence (%)" }
+            }
+          },
+          "description": "Pharmacological evaluation studies"
+        },
+        "manufacturing_assessment": {
+          "type": "object",
+          "properties": {
+            "synthetic_feasibility": { "type": "string", "enum": ["straightforward", "challenging", "complex"] },
+            "estimated_cost_per_gram": { "type": "number", "description": "Manufacturing cost estimate ($/g)" },
+            "scale_up_challenges": { "type": "array", "items": { "type": "string" } },
+            "stability_assessment": { "type": "string", "description": "Chemical stability evaluation" }
+          }
+        }
+      }
+    },
+
+    "clinical_trial_design": {
+      "type": "object",
+      "description": "Clinical trial protocols and patient recruitment strategy",
+      "properties": {
+        "phase_designs": {
+          "type": "object",
+          "properties": {
+            "phase_1": {
+              "type": "object",
+              "properties": {
+                "study_type": { "type": "string", "enum": ["single_ascending_dose", "multiple_ascending_dose", "food_effect", "drug_interaction"] },
+                "participant_count": { "type": "integer", "minimum": 1 },
+                "primary_endpoint": { "type": "string", "description": "Primary safety endpoint" },
+                "duration_weeks": { "type": "integer", "minimum": 1 },
+                "estimated_completion": { "type": "string", "format": "date" }
+              }
+            },
+            "phase_2": {
+              "type": "object",
+              "properties": {
+                "study_design": { "type": "string", "enum": ["parallel_group", "crossover", "factorial", "adaptive"] },
+                "participant_count": { "type": "integer", "minimum": 1 },
+                "primary_endpoint": { "type": "string", "description": "Efficacy endpoint" },
+                "secondary_endpoints": { "type": "array", "items": { "type": "string" } },
+                "duration_weeks": { "type": "integer", "minimum": 1 },
+                "estimated_completion": { "type": "string", "format": "date" }
+              }
+            },
+            "phase_3": {
+              "type": "object",
+              "properties": {
+                "study_design": { "type": "string", "enum": ["superiority", "non_inferiority", "equivalence"] },
+                "participant_count": { "type": "integer", "minimum": 1 },
+                "primary_endpoint": { "type": "string", "description": "Registration endpoint" },
+                "comparator": { "type": "string", "description": "Active comparator or placebo" },
+                "duration_weeks": { "type": "integer", "minimum": 1 },
+                "estimated_completion": { "type": "string", "format": "date" }
+              }
+            }
+          }
+        },
+        "patient_recruitment": {
+          "type": "object",
+          "properties": {
+            "inclusion_criteria": { "type": "array", "items": { "type": "string" } },
+            "exclusion_criteria": { "type": "array", "items": { "type": "string" } },
+            "target_population": { "type": "string", "description": "Patient demographic profile" },
+            "recruitment_sites": { "type": "integer", "minimum": 1, "description": "Number of clinical sites" },
+            "geographic_distribution": { "type": "array", "items": { "type": "string" }, "description": "Site locations" },
+            "estimated_enrollment_time": { "type": "integer", "description": "Enrollment period in months" }
+          }
+        },
+        "statistical_analysis_plan": {
+          "type": "object",
+          "properties": {
+            "sample_size_calculation": { "type": "string", "description": "Power analysis methodology" },
+            "statistical_methods": { "type": "array", "items": { "type": "string" } },
+            "interim_analysis_plan": { "type": "string", "description": "Interim analysis strategy" },
+            "adaptive_design_elements": { "type": "array", "items": { "type": "string" } },
+            "multiplicity_adjustment": { "type": "string", "description": "Multiple testing correction" }
+          }
+        },
+        "regulatory_endpoints": {
+          "type": "object",
+          "properties": {
+            "primary_regulatory_endpoint": { "type": "string", "description": "FDA/EMA approved endpoint" },
+            "surrogate_endpoints": { "type": "array", "items": { "type": "string" } },
+            "clinical_outcome_measures": { "type": "array", "items": { "type": "string" } },
+            "patient_reported_outcomes": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    },
+
+    "regulatory_strategy": {
+      "type": "object",
+      "description": "Regulatory submission strategy and market access planning",
+      "properties": {
+        "fda_strategy": {
+          "type": "object",
+          "properties": {
+            "approval_pathway": {
+              "type": "string",
+              "enum": ["standard_review", "accelerated_approval", "breakthrough_therapy", "fast_track", "priority_review"]
+            },
+            "orphan_drug_designation": { "type": "boolean", "description": "Orphan drug status eligibility" },
+            "pediatric_study_plan": { "type": "boolean", "description": "Pediatric development required" },
+            "rtor_submissions": { "type": "integer", "description": "Number of RTOR meetings planned" },
+            "advisory_committee_meeting": { "type": "boolean", "description": "Advisory committee meeting planned" }
+          }
+        },
+        "ema_strategy": {
+          "type": "object",
+          "properties": {
+            "approval_pathway": {
+              "type": "string",
+              "enum": ["centralized_procedure", "decentralized_procedure", "mutual_recognition"]
+            },
+            "conditional_approval_eligible": { "type": "boolean", "description": "Conditional marketing authorization eligibility" },
+            "prime_scheme_eligible": { "type": "boolean", "description": "PRIME scheme eligibility" },
+            "scientific_advice_meetings": { "type": "integer", "description": "Number of scientific advice meetings" },
+            "accelerated_assessment": { "type": "boolean", "description": "Accelerated assessment eligibility" }
+          }
+        },
+        "global_strategy": {
+          "type": "object",
+          "properties": {
+            "regional_submissions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "region": { "type": "string", "description": "Regulatory region" },
+                  "strategy": { "type": "string", "description": "Regional submission strategy" },
+                  "timeline": { "type": "string", "description": "Regional timeline" },
+                  "estimated_cost": { "type": "number", "description": "Regional submission cost" }
+                }
+              }
+            },
+            "harmonization_opportunities": { "type": "array", "items": { "type": "string" } },
+            "parallel_development": { "type": "boolean", "description": "Parallel regulatory development" }
+          }
+        },
+        "market_access": {
+          "type": "object",
+          "properties": {
+            "health_technology_assessment": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "country": { "type": "string" },
+                  "hta_body": { "type": "string", "description": "HTA organization" },
+                  "estimated_timeline": { "type": "string" },
+                  "reimbursement_potential": { "type": "string", "enum": ["high", "medium", "low"] }
+                }
+              }
+            },
+            "pricing_strategy": { "type": "string", "description": "Global pricing approach" },
+            "real_world_evidence_plan": { "type": "string", "description": "Post-launch evidence generation" },
+            "compassionate_use_program": { "type": "boolean", "description": "Compassionate use availability" }
+          }
+        },
+        "intellectual_property": {
+          "type": "object",
+          "properties": {
+            "patent_protection": { "type": "array", "items": { "type": "string" }, "description": "Patent coverage areas" },
+            "patent_expiry_date": { "type": "string", "format": "date" },
+            "data_exclusivity_period": { "type": "integer", "description": "Data exclusivity years" },
+            "market_exclusivity_period": { "type": "integer", "description": "Market exclusivity years" }
+          }
+        }
+      }
+    },
+
+    "project_timeline": {
+      "type": "object",
+      "description": "Project timeline and milestone planning",
+      "properties": {
+        "milestones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "milestone_name": { "type": "string", "description": "Milestone identifier" },
+              "phase": { "type": "string", "enum": ["discovery", "preclinical", "phase_1", "phase_2", "phase_3", "regulatory", "launch"] },
+              "target_date": { "type": "string", "format": "date" },
+              "dependencies": { "type": "array", "items": { "type": "string" } },
+              "success_criteria": { "type": "array", "items": { "type": "string" } },
+              "budget_allocation": { "type": "number", "description": "Milestone budget ($)" },
+              "risk_level": { "type": "string", "enum": ["low", "medium", "high"] }
+            }
+          }
+        },
+        "critical_path": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Critical path milestones"
+        },
+        "go_no_go_decisions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "decision_point": { "type": "string", "description": "Decision milestone" },
+              "criteria": { "type": "array", "items": { "type": "string" } },
+              "timeline": { "type": "string", "format": "date" },
+              "fallback_options": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        }
+      },
+      "required": ["milestones"]
+    },
+
+    "risk_assessment": {
+      "type": "object",
+      "description": "Project risk assessment and mitigation strategies",
+      "properties": {
+        "technical_risks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk_description": { "type": "string" },
+              "probability": { "type": "string", "enum": ["low", "medium", "high"] },
+              "impact": { "type": "string", "enum": ["low", "medium", "high"] },
+              "mitigation_strategy": { "type": "string" },
+              "contingency_plan": { "type": "string" }
+            }
+          }
+        },
+        "regulatory_risks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk_description": { "type": "string" },
+              "probability": { "type": "string", "enum": ["low", "medium", "high"] },
+              "impact": { "type": "string", "enum": ["low", "medium", "high"] },
+              "mitigation_strategy": { "type": "string" },
+              "regulatory_precedents": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "commercial_risks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk_description": { "type": "string" },
+              "probability": { "type": "string", "enum": ["low", "medium", "high"] },
+              "impact": { "type": "string", "enum": ["low", "medium", "high"] },
+              "market_intelligence": { "type": "string", "description": "Market data supporting assessment" },
+              "mitigation_strategy": { "type": "string" }
+            }
+          }
+        },
+        "overall_risk_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Composite project risk score (0-100)"
+        }
+      },
+      "required": ["overall_risk_score"]
+    },
+
+    "validation_results": {
+      "type": "object",
+      "description": "Analysis validation and scientific rigor assessment",
+      "properties": {
+        "scientific_validity_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Scientific methodology score" },
+        "regulatory_compliance_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Regulatory compliance score" },
+        "commercial_viability_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Commercial potential score" },
+        "validation_errors": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Validation errors and scientific concerns"
+        },
+        "quality_improvements": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Recommended quality enhancements"
+        },
+        "confidence_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Overall project confidence score" }
+      },
+      "required": ["scientific_validity_score", "confidence_score"]
+    }
+  },
+
+  "required": [
+    "project_metadata",
+    "drug_discovery",
+    "validation_results"
+  ],
+
+  "additionalProperties": false
+}

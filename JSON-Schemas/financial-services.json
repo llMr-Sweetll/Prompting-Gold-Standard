@@ -1,0 +1,461 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/llMr-Sweetll/Prompting-Gold-Standard/schemas/financial-services.json",
+  "title": "Financial Services Schema",
+  "description": "Schema for financial services automation including risk assessment, fraud detection, and investment research",
+  "type": "object",
+  "properties": {
+    "institution_metadata": {
+      "type": "object",
+      "description": "Financial institution identification and basic information",
+      "properties": {
+        "institution_id": { "type": "string", "description": "Unique institution identifier" },
+        "institution_name": { "type": "string", "description": "Institution name" },
+        "institution_type": {
+          "type": "string",
+          "enum": ["investment_bank", "asset_manager", "hedge_fund", "private_bank", "retail_bank", "insurance_company"],
+          "description": "Type of financial institution"
+        },
+        "regulatory_status": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["SEC_registered", "FINRA_member", "FCA_authorized", "BaFin_licensed", "MAS_licensed"]
+          },
+          "description": "Regulatory registrations and licenses"
+        },
+        "aum_assets": { "type": "number", "description": "Assets under management in USD" },
+        "primary_markets": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["equities", "fixed_income", "derivatives", "commodities", "currencies", "alternative_investments"]
+          },
+          "description": "Primary investment markets"
+        },
+        "risk_tolerance": {
+          "type": "string",
+          "enum": ["conservative", "moderate", "aggressive"],
+          "description": "Institutional risk tolerance level"
+        },
+        "created_at": { "type": "string", "format": "date-time" },
+        "last_updated": { "type": "string", "format": "date-time" }
+      },
+      "required": ["institution_id", "institution_name", "institution_type"]
+    },
+
+    "portfolio_risk_assessment": {
+      "type": "object",
+      "description": "Comprehensive portfolio risk analysis and stress testing",
+      "properties": {
+        "portfolio_composition": {
+          "type": "object",
+          "properties": {
+            "total_value": { "type": "number", "description": "Total portfolio value ($)" },
+            "asset_allocation": {
+              "type": "object",
+              "description": "Percentage allocation by asset class",
+              "additionalProperties": { "type": "number", "minimum": 0, "maximum": 100 }
+            },
+            "geographic_allocation": {
+              "type": "object",
+              "description": "Percentage allocation by geography",
+              "additionalProperties": { "type": "number", "minimum": 0, "maximum": 100 }
+            },
+            "sector_allocation": {
+              "type": "object",
+              "description": "Percentage allocation by sector",
+              "additionalProperties": { "type": "number", "minimum": 0, "maximum": 100 }
+            }
+          }
+        },
+        "risk_metrics": {
+          "type": "object",
+          "properties": {
+            "volatility": { "type": "number", "description": "Portfolio volatility (annualized)" },
+            "sharpe_ratio": { "type": "number", "description": "Risk-adjusted return measure" },
+            "max_drawdown": { "type": "number", "description": "Maximum portfolio drawdown (%)" },
+            "value_at_risk_95": { "type": "number", "description": "95% VaR ($)" },
+            "expected_shortfall_95": { "type": "number", "description": "95% Expected shortfall ($)" },
+            "beta_to_benchmark": { "type": "number", "description": "Portfolio beta to benchmark" }
+          }
+        },
+        "stress_testing": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "scenario_name": { "type": "string", "description": "Stress test scenario" },
+              "shock_description": { "type": "string", "description": "Market shock description" },
+              "probability": { "type": "string", "enum": ["low", "medium", "high"] },
+              "portfolio_impact": { "type": "number", "description": "Portfolio value change (%)" },
+              "recovery_time": { "type": "string", "description": "Estimated recovery period" },
+              "mitigation_actions": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "description": "Stress testing scenarios and results"
+        },
+        "liquidity_analysis": {
+          "type": "object",
+          "properties": {
+            "cash_position": { "type": "number", "description": "Available cash ($)" },
+            "redemption_pressure": { "type": "string", "enum": ["low", "medium", "high"] },
+            "liquid_assets_ratio": { "type": "number", "minimum": 0, "maximum": 100, "description": "Liquid assets as % of total" },
+            "funding_gap_analysis": { "type": "string", "description": "Short-term funding gap assessment" }
+          }
+        },
+        "counterparty_risks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "counterparty_name": { "type": "string" },
+              "exposure_amount": { "type": "number", "description": "Total exposure ($)" },
+              "credit_rating": { "type": "string", "description": "Credit rating (S&P/Moody's)" },
+              "collateral_held": { "type": "number", "description": "Collateral held ($)" },
+              "risk_rating": { "type": "string", "enum": ["low", "medium", "high", "critical"] }
+            }
+          }
+        }
+      },
+      "required": ["portfolio_composition", "risk_metrics"]
+    },
+
+    "fraud_detection": {
+      "type": "object",
+      "description": "Fraud detection and anomaly analysis system",
+      "properties": {
+        "transaction_monitoring": {
+          "type": "object",
+          "properties": {
+            "daily_transaction_volume": { "type": "integer", "description": "Average daily transactions" },
+            "high_value_threshold": { "type": "number", "description": "High-value transaction threshold ($)" },
+            "unusual_patterns_detected": { "type": "integer", "description": "Number of unusual patterns flagged" },
+            "false_positive_rate": { "type": "number", "minimum": 0, "maximum": 100, "description": "False positive rate (%)" },
+            "detection_accuracy": { "type": "number", "minimum": 0, "maximum": 100, "description": "Detection accuracy (%)" }
+          }
+        },
+        "behavioral_analysis": {
+          "type": "object",
+          "properties": {
+            "customer_profiles_analyzed": { "type": "integer", "description": "Number of customer profiles monitored" },
+            "anomalous_behaviors_flagged": { "type": "integer", "description": "Number of anomalous behaviors detected" },
+            "authentication_anomalies": { "type": "integer", "description": "Authentication anomalies detected" },
+            "device_tracking_alerts": { "type": "integer", "description": "Device/location tracking alerts" },
+            "behavioral_scoring_model": { "type": "string", "description": "Behavioral scoring algorithm used" }
+          }
+        },
+        "machine_learning_models": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "model_name": { "type": "string", "description": "ML model name" },
+              "model_type": {
+                "type": "string",
+                "enum": ["supervised_classification", "unsupervised_clustering", "anomaly_detection", "predictive_modeling"]
+              },
+              "training_data_size": { "type": "integer", "description": "Size of training dataset" },
+              "accuracy_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Model accuracy (%)" },
+              "false_positive_rate": { "type": "number", "minimum": 0, "maximum": 100, "description": "Model false positive rate (%)" },
+              "deployment_status": { "type": "string", "enum": ["development", "testing", "production", "deprecated"] }
+            }
+          },
+          "description": "Machine learning models used for fraud detection"
+        },
+        "alert_system": {
+          "type": "object",
+          "properties": {
+            "alerts_generated_today": { "type": "integer", "description": "Number of alerts generated today" },
+            "critical_alerts": { "type": "integer", "description": "Number of critical alerts" },
+            "escalation_procedures": { "type": "string", "description": "Alert escalation procedures" },
+            "average_response_time": { "type": "string", "description": "Average alert response time" },
+            "alert_categories": {
+              "type": "object",
+              "description": "Alert breakdown by category",
+              "additionalProperties": { "type": "integer" }
+            }
+          }
+        },
+        "aml_kyc_compliance": {
+          "type": "object",
+          "properties": {
+            "customers_screened": { "type": "integer", "description": "Number of customers screened" },
+            "pep_matches": { "type": "integer", "description": "Politically exposed person matches" },
+            "sanctions_matches": { "type": "integer", "description": "Sanctions list matches" },
+            "false_positives": { "type": "integer", "description": "False positive identifications" },
+            "compliance_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "AML/KYC compliance score (%)" }
+          }
+        }
+      }
+    },
+
+    "investment_research": {
+      "type": "object",
+      "description": "Investment research and analysis generation",
+      "properties": {
+        "fundamental_analysis": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "security_ticker": { "type": "string", "description": "Security ticker symbol" },
+              "company_name": { "type": "string", "description": "Company name" },
+              "sector": { "type": "string", "description": "Industry sector" },
+              "market_cap": { "type": "number", "description": "Market capitalization ($)" },
+              "pe_ratio": { "type": "number", "description": "Price-to-earnings ratio" },
+              "revenue_growth": { "type": "number", "description": "Revenue growth rate (%)" },
+              "net_margin": { "type": "number", "description": "Net profit margin (%)" },
+              "debt_to_equity": { "type": "number", "description": "Debt-to-equity ratio" },
+              "fundamental_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Fundamental analysis score" }
+            }
+          },
+          "description": "Fundamental analysis of securities"
+        },
+        "technical_analysis": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "security_ticker": { "type": "string" },
+              "current_price": { "type": "number", "description": "Current price ($)" },
+              "price_change_52w": { "type": "number", "description": "52-week price change (%)" },
+              "volume_average": { "type": "number", "description": "Average daily volume" },
+              "rsi_14d": { "type": "number", "minimum": 0, "maximum": 100, "description": "14-day RSI" },
+              "macd_signal": { "type": "string", "enum": ["bullish", "bearish", "neutral"] },
+              "moving_average_50d": { "type": "number", "description": "50-day moving average" },
+              "moving_average_200d": { "type": "number", "description": "200-day moving average" },
+              "technical_score": { "type": "number", "minimum": 0, "maximum": 100 }
+            }
+          },
+          "description": "Technical analysis of securities"
+        },
+        "quantitative_modeling": {
+          "type": "object",
+          "properties": {
+            "factor_models": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "model_name": { "type": "string", "description": "Factor model name" },
+                  "factors_included": { "type": "array", "items": { "type": "string" } },
+                  "r_squared": { "type": "number", "minimum": 0, "maximum": 1, "description": "Model R-squared" },
+                  "alpha_generated": { "type": "number", "description": "Annualized alpha (%)" },
+                  "tracking_error": { "type": "number", "description": "Tracking error (%)" }
+                }
+              }
+            },
+            "portfolio_optimization": {
+              "type": "object",
+              "properties": {
+                "efficient_frontier_points": { "type": "integer", "description": "Number of efficient frontier points calculated" },
+                "optimal_portfolio_weights": {
+                  "type": "object",
+                  "description": "Optimal portfolio weights by asset",
+                  "additionalProperties": { "type": "number", "minimum": 0, "maximum": 100 }
+                },
+                "expected_return": { "type": "number", "description": "Expected portfolio return (%)" },
+                "portfolio_volatility": { "type": "number", "description": "Portfolio volatility (%)" }
+              }
+            }
+          }
+        },
+        "market_intelligence": {
+          "type": "object",
+          "properties": {
+            "economic_indicators": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "indicator_name": { "type": "string" },
+                  "current_value": { "type": "number" },
+                  "previous_value": { "type": "number" },
+                  "forecast_value": { "type": "number" },
+                  "impact_on_markets": { "type": "string", "enum": ["positive", "negative", "neutral"] }
+                }
+              }
+            },
+            "sector_analysis": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "sector_name": { "type": "string" },
+                  "sector_performance": { "type": "number", "description": "Sector performance vs market (%)" },
+                  "momentum_score": { "type": "number", "minimum": 0, "maximum": 100 },
+                  "valuation_metrics": { "type": "object", "additionalProperties": { "type": "number" } }
+                }
+              }
+            },
+            "geopolitical_risks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "risk_description": { "type": "string" },
+                  "probability": { "type": "string", "enum": ["low", "medium", "high"] },
+                  "potential_impact": { "type": "string", "enum": ["low", "medium", "high"] },
+                  "affected_markets": { "type": "array", "items": { "type": "string" } }
+                }
+              }
+            }
+          }
+        },
+        "investment_recommendations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "security_ticker": { "type": "string" },
+              "recommendation": { "type": "string", "enum": ["strong_buy", "buy", "hold", "sell", "strong_sell"] },
+              "target_price": { "type": "number", "description": "Price target ($)" },
+              "time_horizon": { "type": "string", "enum": ["short_term", "medium_term", "long_term"] },
+              "conviction_level": { "type": "string", "enum": ["low", "medium", "high"] },
+              "key_thesis": { "type": "string", "description": "Investment thesis summary" },
+              "catalysts": { "type": "array", "items": { "type": "string" }, "description": "Key catalysts" },
+              "risks": { "type": "array", "items": { "type": "string" }, "description": "Key risks" }
+            }
+          },
+          "description": "Investment recommendations with rationale"
+        }
+      }
+    },
+
+    "regulatory_compliance": {
+      "type": "object",
+      "description": "Regulatory compliance monitoring and reporting",
+      "properties": {
+        "sec_compliance": {
+          "type": "object",
+          "properties": {
+            "form_adv_status": { "type": "string", "enum": ["current", "pending_update", "overdue"] },
+            "form_13f_filings": { "type": "string", "enum": ["up_to_date", "pending", "overdue"] },
+            "custody_rule_compliance": { "type": "boolean", "description": "Custody rule compliance status" },
+            "advertising_review": { "type": "boolean", "description": "Advertising materials reviewed" },
+            "recordkeeping_audit": { "type": "string", "description": "Last recordkeeping audit date" }
+          }
+        },
+        "finra_compliance": {
+          "type": "object",
+          "properties": {
+            "best_execution_review": { "type": "boolean", "description": "Best execution procedures reviewed" },
+            "trade_reporting_accuracy": { "type": "number", "minimum": 0, "maximum": 100, "description": "Trade reporting accuracy (%)" },
+            "client_communication_standards": { "type": "boolean", "description": "Client communication standards met" },
+            "supervisory_procedures": { "type": "boolean", "description": "Supervisory procedures in place" },
+            "regulatory_exams": { "type": "string", "description": "Last regulatory examination date" }
+          }
+        },
+        "risk_management_reporting": {
+          "type": "object",
+          "properties": {
+            "stress_test_reports": { "type": "string", "enum": ["completed", "in_progress", "overdue"] },
+            "liquidity_reports": { "type": "string", "enum": ["current", "pending", "overdue"] },
+            "counterparty_exposure_reports": { "type": "string", "enum": ["current", "pending", "overdue"] },
+            "valuation_reports": { "type": "string", "enum": ["current", "pending", "overdue"] },
+            "compliance_testing": { "type": "string", "description": "Last compliance testing date" }
+          }
+        },
+        "audit_trail": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timestamp": { "type": "string", "format": "date-time" },
+              "action_type": { "type": "string", "description": "Type of action performed" },
+              "user_id": { "type": "string", "description": "User who performed action" },
+              "system_component": { "type": "string", "description": "System component affected" },
+              "compliance_impact": { "type": "string", "enum": ["high", "medium", "low", "none"] },
+              "evidence": { "type": "string", "description": "Audit evidence or reference" }
+            }
+          },
+          "description": "Regulatory compliance audit trail"
+        }
+      }
+    },
+
+    "performance_metrics": {
+      "type": "object",
+      "description": "Financial performance metrics and benchmarking",
+      "properties": {
+        "portfolio_performance": {
+          "type": "object",
+          "properties": {
+            "time_weighted_return": { "type": "number", "description": "Time-weighted return (%)" },
+            "money_weighted_return": { "type": "number", "description": "Money-weighted return (%)" },
+            "benchmark_comparison": { "type": "number", "description": "Performance vs benchmark (%)" },
+            "alpha_generated": { "type": "number", "description": "Risk-adjusted alpha (%)" },
+            "tracking_error": { "type": "number", "description": "Tracking error vs benchmark (%)" },
+            "information_ratio": { "type": "number", "description": "Information ratio" },
+            "maximum_drawdown": { "type": "number", "description": "Maximum drawdown (%)" }
+          }
+        },
+        "risk_adjusted_metrics": {
+          "type": "object",
+          "properties": {
+            "sharpe_ratio": { "type": "number", "description": "Sharpe ratio" },
+            "sortino_ratio": { "type": "number", "description": "Sortino ratio" },
+            "calmar_ratio": { "type": "number", "description": "Calmar ratio" },
+            "omega_ratio": { "type": "number", "description": "Omega ratio" },
+            "value_at_risk": { "type": "number", "description": "95% VaR (%)" }
+          }
+        },
+        "attribution_analysis": {
+          "type": "object",
+          "properties": {
+            "sector_attribution": {
+              "type": "object",
+              "description": "Performance attribution by sector",
+              "additionalProperties": { "type": "number" }
+            },
+            "security_attribution": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "security_ticker": { "type": "string" },
+                  "attribution_impact": { "type": "number", "description": "Performance impact (%)" }
+                }
+              }
+            },
+            "currency_attribution": { "type": "number", "description": "Currency impact on returns (%)" },
+            "allocation_attribution": { "type": "number", "description": "Asset allocation impact (%)" },
+            "selection_attribution": { "type": "number", "description": "Security selection impact (%)" }
+          }
+        }
+      }
+    },
+
+    "validation_results": {
+      "type": "object",
+      "description": "Analysis validation and quality assurance results",
+      "properties": {
+        "risk_assessment_accuracy": { "type": "number", "minimum": 0, "maximum": 100, "description": "Risk assessment quality score" },
+        "fraud_detection_effectiveness": { "type": "number", "minimum": 0, "maximum": 100, "description": "Fraud detection effectiveness score" },
+        "investment_research_quality": { "type": "number", "minimum": 0, "maximum": 100, "description": "Investment research quality score" },
+        "regulatory_compliance_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Regulatory compliance score" },
+        "validation_errors": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Validation errors and issues"
+        },
+        "quality_improvements": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Suggested quality enhancements"
+        },
+        "overall_confidence_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Overall system confidence score" }
+      },
+      "required": ["overall_confidence_score"]
+    }
+  },
+
+  "required": [
+    "institution_metadata",
+    "portfolio_risk_assessment",
+    "validation_results"
+  ],
+
+  "additionalProperties": false
+}

@@ -1,0 +1,323 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/llMr-Sweetll/Prompting-Gold-Standard/schemas/content-creation.json",
+  "title": "Content Creation Schema",
+  "description": "Schema for content creation workflows including research, outlining, drafting, and SEO optimization",
+  "type": "object",
+  "properties": {
+    "content_metadata": {
+      "type": "object",
+      "description": "Metadata about the content creation project",
+      "properties": {
+        "content_id": { "type": "string", "description": "Unique identifier for the content project" },
+        "title": { "type": "string", "description": "Content title or headline" },
+        "topic": { "type": "string", "description": "Primary topic or subject" },
+        "content_type": {
+          "type": "string",
+          "enum": ["blog_post", "article", "social_media", "newsletter", "whitepaper", "video_script", "podcast_script"],
+          "description": "Type of content being created"
+        },
+        "target_audience": {
+          "type": "object",
+          "properties": {
+            "demographics": { "type": "string", "description": "Age, gender, location, etc." },
+            "interests": { "type": "array", "items": { "type": "string" }, "description": "Target audience interests" },
+            "pain_points": { "type": "array", "items": { "type": "string" }, "description": "Audience challenges to address" }
+          }
+        },
+        "platforms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["blog", "linkedin", "twitter", "facebook", "instagram", "newsletter", "youtube", "tiktok"]
+          },
+          "description": "Target publishing platforms"
+        },
+        "brand_voice": {
+          "type": "object",
+          "properties": {
+            "tone": { "type": "string", "enum": ["professional", "casual", "authoritative", "friendly", "technical"] },
+            "style": { "type": "string", "description": "Writing style preferences" },
+            "values": { "type": "array", "items": { "type": "string" }, "description": "Brand values to incorporate" }
+          }
+        },
+        "word_count": { "type": "integer", "minimum": 1, "description": "Target word count" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "deadline": { "type": "string", "format": "date-time" }
+      },
+      "required": ["content_id", "title", "topic", "content_type"]
+    },
+
+    "research_data": {
+      "type": "object",
+      "description": "Research findings and data collection",
+      "properties": {
+        "market_research": {
+          "type": "object",
+          "properties": {
+            "industry_trends": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "trend": { "type": "string" },
+                  "impact": { "type": "string", "enum": ["high", "medium", "low"] },
+                  "timeframe": { "type": "string" },
+                  "sources": { "type": "array", "items": { "type": "string" } }
+                }
+              }
+            },
+            "competitor_analysis": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "competitor": { "type": "string" },
+                  "strategy": { "type": "string" },
+                  "strengths": { "type": "array", "items": { "type": "string" } },
+                  "gaps": { "type": "array", "items": { "type": "string" } }
+                }
+              }
+            },
+            "audience_insights": {
+              "type": "object",
+              "properties": {
+                "search_queries": { "type": "array", "items": { "type": "string" } },
+                "pain_points": { "type": "array", "items": { "type": "string" } },
+                "content_preferences": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        },
+        "seo_research": {
+          "type": "object",
+          "properties": {
+            "primary_keywords": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "keyword": { "type": "string" },
+                  "search_volume": { "type": "integer" },
+                  "competition": { "type": "string", "enum": ["high", "medium", "low"] },
+                  "cpc": { "type": "number" }
+                }
+              }
+            },
+            "secondary_keywords": { "type": "array", "items": { "type": "string" } },
+            "long_tail_keywords": { "type": "array", "items": { "type": "string" } },
+            "question_keywords": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "content_gaps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "gap": { "type": "string", "description": "Content opportunity or gap" },
+              "opportunity_score": { "type": "number", "minimum": 0, "maximum": 10 },
+              "difficulty": { "type": "string", "enum": ["easy", "medium", "hard"] }
+            }
+          },
+          "description": "Identified content gaps and opportunities"
+        }
+      }
+    },
+
+    "content_outline": {
+      "type": "object",
+      "description": "Structured content outline with SEO optimization",
+      "properties": {
+        "headline": { "type": "string", "description": "Optimized headline" },
+        "subheadline": { "type": "string", "description": "Supporting subheadline" },
+        "introduction": {
+          "type": "object",
+          "properties": {
+            "hook": { "type": "string", "description": "Attention-grabbing opening" },
+            "thesis": { "type": "string", "description": "Main thesis or promise" },
+            "keyword_placement": { "type": "boolean", "description": "Primary keyword in intro" }
+          }
+        },
+        "body_sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "heading": { "type": "string", "description": "Section heading with keywords" },
+              "word_count": { "type": "integer", "minimum": 1 },
+              "key_points": { "type": "array", "items": { "type": "string" } },
+              "keywords": { "type": "array", "items": { "type": "string" } },
+              "calls_to_action": { "type": "array", "items": { "type": "string" } }
+            },
+            "required": ["heading", "key_points"]
+          }
+        },
+        "conclusion": {
+          "type": "object",
+          "properties": {
+            "summary": { "type": "string", "description": "Key takeaways summary" },
+            "final_cta": { "type": "string", "description": "Final call-to-action" },
+            "next_steps": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "seo_optimization": {
+          "type": "object",
+          "properties": {
+            "internal_links": { "type": "array", "items": { "type": "string" } },
+            "external_links": { "type": "array", "items": { "type": "string" } },
+            "image_suggestions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "description": { "type": "string" },
+                  "alt_text": { "type": "string" },
+                  "placement": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "required": ["headline", "body_sections"]
+    },
+
+    "content_draft": {
+      "type": "object",
+      "description": "Generated content draft with metadata",
+      "properties": {
+        "full_text": { "type": "string", "description": "Complete content draft" },
+        "word_count": { "type": "integer", "minimum": 0 },
+        "readability_score": {
+          "type": "object",
+          "properties": {
+            "flesch_kincaid": { "type": "number" },
+            "grade_level": { "type": "string" },
+            "reading_time": { "type": "string" }
+          }
+        },
+        "brand_voice_compliance": {
+          "type": "object",
+          "properties": {
+            "tone_score": { "type": "number", "minimum": 0, "maximum": 100 },
+            "style_consistency": { "type": "number", "minimum": 0, "maximum": 100 },
+            "value_alignment": { "type": "number", "minimum": 0, "maximum": 100 }
+          }
+        },
+        "platform_adaptations": {
+          "type": "object",
+          "description": "Platform-specific content variations",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "adapted_text": { "type": "string" },
+              "character_count": { "type": "integer" },
+              "hashtags": { "type": "array", "items": { "type": "string" } },
+              "formatting_notes": { "type": "string" }
+            }
+          }
+        }
+      },
+      "required": ["full_text", "word_count"]
+    },
+
+    "seo_analysis": {
+      "type": "object",
+      "description": "SEO performance analysis and optimization recommendations",
+      "properties": {
+        "keyword_analysis": {
+          "type": "object",
+          "properties": {
+            "primary_keyword": {
+              "type": "object",
+              "properties": {
+                "keyword": { "type": "string" },
+                "density": { "type": "number", "minimum": 0, "maximum": 100 },
+                "placement_score": { "type": "number", "minimum": 0, "maximum": 100 },
+                "optimal": { "type": "boolean" }
+              }
+            },
+            "secondary_keywords": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "keyword": { "type": "string" },
+                  "count": { "type": "integer" },
+                  "density": { "type": "number" }
+                }
+              }
+            },
+            "keyword_stuffing_risk": { "type": "string", "enum": ["low", "medium", "high"] }
+          }
+        },
+        "content_quality_metrics": {
+          "type": "object",
+          "properties": {
+            "engagement_score": { "type": "number", "minimum": 0, "maximum": 100 },
+            "shareability_score": { "type": "number", "minimum": 0, "maximum": 100 },
+            "authority_score": { "type": "number", "minimum": 0, "maximum": 100 },
+            "comprehensive_score": { "type": "number", "minimum": 0, "maximum": 100 }
+          }
+        },
+        "performance_predictions": {
+          "type": "object",
+          "properties": {
+            "organic_traffic_estimate": { "type": "integer", "minimum": 0 },
+            "ranking_potential": { "type": "string", "enum": ["high", "medium", "low"] },
+            "competition_level": { "type": "string", "enum": ["high", "medium", "low"] },
+            "time_to_rank": { "type": "string" }
+          }
+        },
+        "optimization_recommendations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "recommendation": { "type": "string" },
+              "priority": { "type": "string", "enum": ["high", "medium", "low"] },
+              "impact": { "type": "string", "enum": ["high", "medium", "low"] },
+              "effort": { "type": "string", "enum": ["high", "medium", "low"] }
+            }
+          }
+        }
+      }
+    },
+
+    "validation_results": {
+      "type": "object",
+      "description": "Content validation and quality assurance results",
+      "properties": {
+        "content_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Overall content quality score" },
+        "seo_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "SEO optimization score" },
+        "engagement_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Predicted engagement score" },
+        "brand_compliance_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "Brand voice compliance score" },
+        "validation_errors": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Validation errors and issues"
+        },
+        "improvement_suggestions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Suggested improvements"
+        },
+        "approval_status": {
+          "type": "string",
+          "enum": ["approved", "needs_revision", "rejected"],
+          "description": "Content approval status"
+        }
+      },
+      "required": ["content_score", "seo_score"]
+    }
+  },
+
+  "required": [
+    "content_metadata",
+    "content_outline",
+    "content_draft",
+    "validation_results"
+  ],
+
+  "additionalProperties": false
+}
