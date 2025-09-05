@@ -399,9 +399,108 @@ echo '✅ Regulatory compliance monitoring and automated reporting'
 echo '✅ Executive summary with key metrics and strategic recommendations'
 ```
 
+## 🚀 Simple Copy-Paste Prompt for Non-Technical Users
+
+**Just copy-paste this entire prompt into ChatGPT, Claude, or any AI chat interface!**
+
+```
+You are a comprehensive financial services expert. I need you to perform complete portfolio analysis, risk assessment, fraud detection, and investment research.
+
+FINANCIAL ANALYSIS REQUEST:
+Institution Type: [TYPE - e.g., "Investment Management Firm"]
+Portfolio Size: [SIZE - e.g., "$2.5B AUM"]
+Risk Tolerance: [RISK - e.g., "Moderate (60% equities, 30% fixed income, 10% alternatives)"]
+Regulatory Requirements: [REGULATORY - e.g., "SEC Registered Investment Advisor"]
+Primary Markets: [MARKETS - e.g., "US Large Cap, Global Bonds, Alternative Investments"]
+Key Concerns: [CONCERNS - e.g., "Risk management, fraud detection, regulatory compliance"]
+
+STEP-BY-STEP FINANCIAL ANALYSIS:
+
+1. PORTFOLIO RISK ASSESSMENT PHASE:
+   Conduct comprehensive risk analysis:
+   - Portfolio volatility and Value-at-Risk (VaR) calculations
+   - Stress testing under various market scenarios (recession, inflation, geopolitical)
+   - Liquidity analysis and redemption pressure assessment
+   - Credit risk evaluation for fixed income holdings
+   - Counterparty risk assessment for derivatives and swaps
+   - Regulatory capital adequacy and margin requirements
+
+2. FRAUD DETECTION PHASE:
+   Implement fraud monitoring and anomaly detection:
+   - Transaction pattern analysis and unusual activity detection
+   - Behavioral profiling and authentication anomaly identification
+   - Machine learning models for predictive fraud scoring
+   - AML (Anti-Money Laundering) and KYC compliance monitoring
+   - Real-time alerting and escalation procedures
+   - Regulatory reporting and suspicious activity documentation
+
+3. INVESTMENT RESEARCH PHASE:
+   Generate comprehensive investment analysis:
+   - Fundamental analysis of securities (financial statements, valuation metrics)
+   - Technical analysis (price trends, momentum indicators, chart patterns)
+   - Quantitative modeling (factor analysis, portfolio optimization)
+   - Market intelligence (economic indicators, sector trends, geopolitical factors)
+   - Risk-adjusted return calculations and benchmark comparisons
+   - Investment recommendations with conviction levels and time horizons
+
+4. REGULATORY COMPLIANCE PHASE:
+   Ensure regulatory adherence and reporting:
+   - SEC Form ADV and Form 13F filing requirements
+   - FINRA best execution and trade reporting standards
+   - Risk management reporting and stress test documentation
+   - Audit trail generation and examination readiness
+   - Client communication and disclosure requirements
+
+5. PERFORMANCE ANALYSIS PHASE:
+   Analyze and report investment performance:
+   - Time-weighted and money-weighted return calculations
+   - Benchmark comparison and attribution analysis
+   - Risk-adjusted performance metrics (Sharpe, Sortino ratios)
+   - Portfolio optimization recommendations and rebalancing strategies
+
+OUTPUT FORMAT:
+- Start with comprehensive portfolio risk assessment and metrics
+- Provide fraud detection analysis and monitoring recommendations
+- Include detailed investment research and recommendations
+- End with regulatory compliance status and performance analysis
+- Use clear financial terminology with explanations for complex concepts
+
+Focus on actionable insights, regulatory compliance, and risk-adjusted performance optimization.
+```
+
+### 📝 How to Use This Simple Prompt:
+
+1. **Copy the entire prompt above** (from "You are a comprehensive financial..." to the end)
+2. **Paste it into any AI chat interface** (ChatGPT, Claude, Gemini, etc.)
+3. **Replace the bracketed sections** with your specific financial details:
+   - `[TYPE]` → Your institution type (bank, investment firm, etc.)
+   - `[SIZE]` → Portfolio/assets under management
+   - `[RISK]` → Risk tolerance level and asset allocation
+   - `[REGULATORY]` → Regulatory requirements and jurisdictions
+   - `[MARKETS]` → Primary investment markets and strategies
+   - `[CONCERNS]` → Your main areas of concern
+4. **Send and get complete financial analysis!**
+
+### 🎯 What You'll Get:
+- ✅ **Portfolio Risk Assessment** - VaR, stress testing, liquidity analysis
+- ✅ **Fraud Detection Analysis** - ML models, AML compliance, real-time monitoring
+- ✅ **Investment Research** - Fundamental/technical analysis, recommendations
+- ✅ **Regulatory Compliance** - SEC/FINRA requirements, audit trails
+- ✅ **Performance Analysis** - Risk-adjusted returns, benchmark comparisons
+
+### 💡 Pro Tips for Best Results:
+- Include your current asset allocation and investment strategy
+- Specify regulatory requirements (SEC, FINRA, FCA, etc.)
+- Mention any specific risk concerns or compliance requirements
+- Include portfolio size and time horizon for analysis
+- Specify whether you need conservative, moderate, or aggressive analysis
+
+---
+
 ## Notes
 - This workflow provides complete financial services automation from risk management to investment decision-making
 - Quantitative risk assessment ensures portfolio stability and regulatory compliance
 - Machine learning fraud detection protects against sophisticated financial crimes
 - Multi-factor investment research enables data-driven portfolio optimization
 - Automated compliance reporting ensures regulatory adherence and audit readiness
+- **Simple copy-paste version** makes financial analysis accessible for non-finance professionals

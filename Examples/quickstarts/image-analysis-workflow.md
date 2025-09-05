@@ -272,6 +272,102 @@ echo '✅ Structured data extraction with JSON schemas'
 echo '✅ HIPAA-compliant healthcare workflow'
 ```
 
+## 🚀 Simple Copy-Paste Prompt for Non-Technical Users
+
+**Just copy-paste this entire prompt into ChatGPT, Claude, or any AI chat interface!**
+
+```
+You are a comprehensive image analysis expert. I need you to perform complete visual analysis, content description, quality assessment, and insights generation.
+
+IMAGE ANALYSIS REQUEST:
+Image Type: [TYPE - e.g., "Medical X-Ray" or "Product Photograph"]
+Domain: [DOMAIN - e.g., "Healthcare" or "E-commerce"]
+Analysis Focus: [FOCUS - e.g., "Fracture Detection" or "Product Quality"]
+Quality Requirements: [QUALITY - e.g., "High-resolution, clear contrast"]
+Privacy Level: [PRIVACY - e.g., "Public" or "PHI Protected"]
+
+STEP-BY-STEP IMAGE ANALYSIS:
+
+1. IMAGE QUALITY ASSESSMENT PHASE:
+   Evaluate technical image quality:
+   - Resolution and clarity metrics analysis
+   - Contrast and brightness evaluation
+   - Noise and artifact detection
+   - Preprocessing recommendations
+   - Diagnostic or analytical suitability scoring
+   - Format and compression assessment
+
+2. VISUAL CONTENT ANALYSIS PHASE:
+   Perform detailed content description:
+   - Primary content type identification (medical, scientific, document, etc.)
+   - Key elements and objects detection
+   - Text content extraction (OCR if applicable)
+   - Color and composition analysis
+   - Contextual understanding and interpretation
+   - Anomaly or feature identification
+
+3. DOMAIN-SPECIFIC ANALYSIS PHASE:
+   Apply specialized analysis based on domain:
+   - Medical: Anatomical structure identification, abnormality detection
+   - Scientific: Data visualization analysis, experimental setup evaluation
+   - Business: Product quality assessment, brand compliance checking
+   - Technical: Schematic analysis, measurement extraction
+   - Creative: Composition evaluation, style analysis
+
+4. INSIGHTS & RECOMMENDATIONS PHASE:
+   Generate actionable insights:
+   - Key findings and observations summary
+   - Quality improvement recommendations
+   - Usage recommendations and best practices
+   - Alternative analysis suggestions
+   - Integration opportunities with other systems
+
+5. STRUCTURAL OUTPUT PHASE:
+   Provide organized analysis results:
+   - Executive summary of key findings
+   - Detailed technical specifications
+   - Confidence scores for all assessments
+   - Recommendations prioritized by impact
+   - Supporting evidence and references
+
+OUTPUT FORMAT:
+- Start with comprehensive quality assessment metrics
+- Provide detailed content description and analysis
+- Include domain-specific findings and interpretations
+- End with actionable insights and recommendations
+- Use clear, descriptive language accessible to non-experts
+
+Focus on practical applications, actionable insights, and clear communication of technical findings.
+```
+
+### 📝 How to Use This Simple Prompt:
+
+1. **Copy the entire prompt above** (from "You are a comprehensive image..." to the end)
+2. **Paste it into any AI chat interface** (ChatGPT, Claude, Gemini, etc.)
+3. **Replace the bracketed sections** with your specific image details:
+   - `[TYPE]` → Image type (medical, product, scientific, etc.)
+   - `[DOMAIN]` → Analysis domain or industry
+   - `[FOCUS]` → Specific analysis objectives
+   - `[QUALITY]` → Quality requirements or expectations
+   - `[PRIVACY]` → Privacy/sensitivity level
+4. **Attach or describe your image** and send for analysis!
+
+### 🎯 What You'll Get:
+- ✅ **Quality Assessment** - Technical metrics, preprocessing needs
+- ✅ **Content Analysis** - Detailed description, object detection
+- ✅ **Domain-Specific Insights** - Specialized analysis for your field
+- ✅ **Actionable Recommendations** - Practical applications and improvements
+- ✅ **Structured Output** - Organized, clear results with confidence scores
+
+### 💡 Pro Tips for Best Results:
+- Provide clear images with good lighting and focus for best analysis
+- Specify your domain expertise level for appropriately technical responses
+- Include context about how you plan to use the analysis results
+- Mention any specific features or concerns you want emphasized
+- Specify the output format you prefer (technical vs. simplified)
+
+---
+
 ## Notes
 - This workflow demonstrates multi-modal AI capabilities combining visual processing with clinical expertise
 - JSON schema validation ensures structured, interoperable medical data output
@@ -279,3 +375,4 @@ echo '✅ HIPAA-compliant healthcare workflow'
 - Privacy and security considerations for Protected Health Information (PHI)
 - Scalable architecture supports batch processing of medical images
 - Integration with EHR systems and clinical decision support platforms
+- **Simple copy-paste version** makes image analysis accessible for non-technical users

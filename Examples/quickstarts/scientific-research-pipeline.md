@@ -361,9 +361,108 @@ echo '🎉 Scientific Research Pipeline Complete!'
 echo 'Generated files: hypothesis.md, experimental_design.json, analysis_plan.md, publication_draft.tex'
 ```
 
+## 🚀 Simple Copy-Paste Prompt for Non-Technical Users
+
+**Just copy-paste this entire prompt into ChatGPT, Claude, or any AI chat interface!**
+
+```
+You are a comprehensive scientific research expert. I need you to design a complete research study from hypothesis generation to publication-ready manuscript.
+
+RESEARCH REQUEST:
+Field: [FIELD - e.g., "Neuroscience" or "Psychology"]
+Research Question: [QUESTION - e.g., "How does sleep affect memory consolidation?"]
+Available Resources: [RESOURCES - e.g., "Lab equipment, survey tools, statistical software"]
+Timeline: [TIMELINE - e.g., "12 months"]
+Funding Level: [FUNDING - e.g., "Government grant" or "University funding"]
+
+STEP-BY-STEP RESEARCH DESIGN:
+
+1. HYPOTHESIS GENERATION PHASE:
+   Generate evidence-based hypotheses with literature support:
+   - Review current literature and identify knowledge gaps
+   - Formulate 3-5 testable hypotheses with clear predictions
+   - Provide citation evidence for each hypothesis
+   - Consider alternative explanations and confounding variables
+   - Assess feasibility with available resources and timeline
+
+2. EXPERIMENTAL DESIGN PHASE:
+   Create detailed research methodology:
+   - Define independent and dependent variables clearly
+   - Design control and experimental conditions
+   - Determine sample size with power analysis justification
+   - Establish randomization and blinding procedures
+   - Create detailed protocol with step-by-step procedures
+   - Plan data collection and management strategies
+
+3. DATA ANALYSIS PLAN PHASE:
+   Develop comprehensive statistical analysis strategy:
+   - Select appropriate statistical tests for your design
+   - Plan power analysis and sample size validation
+   - Design data visualization and exploration methods
+   - Establish data quality control and cleaning procedures
+   - Create result interpretation guidelines
+   - Plan sensitivity and robustness analyses
+
+4. PUBLICATION PREPARATION PHASE:
+   Structure publication-ready manuscript:
+   - Write compelling title and abstract
+   - Craft introduction with literature review and rationale
+   - Detail materials and methods with sufficient clarity
+   - Plan results presentation with figures and tables
+   - Outline discussion with implications and limitations
+   - Generate complete reference list and citations
+
+5. PROJECT MANAGEMENT PHASE:
+   Create research timeline and milestones:
+   - Break down research into manageable phases
+   - Establish clear success criteria for each milestone
+   - Identify potential risks and contingency plans
+   - Plan resource allocation and budget considerations
+   - Establish quality control and reproducibility measures
+
+OUTPUT FORMAT:
+- Start with comprehensive literature review and hypothesis development
+- Provide detailed experimental protocol and methodology
+- Include statistical analysis plan with power calculations
+- End with publication-ready manuscript structure
+- Add project management timeline and risk assessment
+
+Focus on scientific rigor, methodological soundness, and publication-quality standards throughout the research design.
+```
+
+### 📝 How to Use This Simple Prompt:
+
+1. **Copy the entire prompt above** (from "You are a comprehensive scientific..." to the end)
+2. **Paste it into any AI chat interface** (ChatGPT, Claude, Gemini, etc.)
+3. **Replace the bracketed sections** with your specific research details:
+   - `[FIELD]` → Your research field or discipline
+   - `[QUESTION]` → Your specific research question
+   - `[RESOURCES]` → Available equipment, tools, participants
+   - `[TIMELINE]` → Available time for the research
+   - `[FUNDING]` → Funding level and constraints
+4. **Send and get complete research design!**
+
+### 🎯 What You'll Get:
+- ✅ **Literature Review** - Comprehensive background and gap analysis
+- ✅ **Research Hypotheses** - Testable hypotheses with evidence
+- ✅ **Experimental Protocol** - Detailed methodology and procedures
+- ✅ **Statistical Analysis Plan** - Power calculations and data analysis
+- ✅ **Publication Structure** - Complete manuscript framework
+- ✅ **Project Timeline** - Research milestones and management
+
+### 💡 Pro Tips for Best Results:
+- Be specific about your research field and available resources
+- Include any existing data or preliminary findings you have
+- Mention specific statistical methods you're familiar with
+- Specify publication targets (journal type, audience)
+- Include any regulatory or ethical considerations for your research
+
+---
+
 ## Notes
 - This pipeline creates a complete research workflow from concept to publication
 - All outputs are grounded in scientific rigor and experimental design principles
 - JSON schema validation ensures experimental design quality
 - LaTeX output is Overleaf-compatible for immediate publication preparation
 - Power analysis and statistical planning ensure research validity
+- **Simple copy-paste version** makes scientific research planning accessible for non-researchers
