@@ -372,9 +372,101 @@ echo '✅ Regulatory compliance verification and audit trails'
 echo '✅ Executive summary for decision makers'
 ```
 
+## 🚀 Simple Copy-Paste Prompt for Non-Technical Users
+
+**Just copy-paste this entire prompt into ChatGPT, Claude, or any AI chat interface!**
+
+```
+You are a comprehensive legal document analysis expert. I need you to perform complete contract review and risk assessment.
+
+LEGAL DOCUMENT REQUEST:
+Document Type: [TYPE - e.g., "Commercial Service Agreement"]
+Jurisdiction: [JURISDICTION - e.g., "United States (California law)"]
+Industry: [INDUSTRY - e.g., "Technology/SaaS"]
+Contract Value: [VALUE - e.g., "$2.5M annually"]
+Key Concerns: [CONCERNS - e.g., "Payment terms, liability, IP rights, termination"]
+Compliance Requirements: [COMPLIANCE - e.g., "GDPR, CCPA, SOC 2"]
+
+STEP-BY-STEP LEGAL ANALYSIS:
+
+1. CONTRACT ANALYSIS PHASE:
+   - Extract and categorize all key clauses (payment, liability, IP, termination, etc.)
+   - Identify critical terms and obligations for both parties
+   - Analyze payment terms, penalties, and financial commitments
+   - Review liability limitations and indemnification provisions
+   - Examine intellectual property rights and licensing terms
+   - Assess termination conditions and notice periods
+   - Evaluate force majeure and dispute resolution clauses
+
+2. RISK ASSESSMENT PHASE:
+   Conduct comprehensive risk analysis:
+   - Financial Risks: Payment terms, penalties, currency issues, taxes
+   - Operational Risks: Service levels, termination, change management
+   - Legal Risks: Liability caps, IP protection, data security
+   - Compliance Risks: GDPR, CCPA, industry regulations
+   - Provide risk ratings (Low/Medium/High/Critical) for each area
+   - Include mitigation strategies and recommendations
+
+3. COMPLIANCE VERIFICATION PHASE:
+   Verify regulatory compliance:
+   - GDPR: Data processing, lawful basis, subject rights, transfers
+   - CCPA: Personal info definitions, consumer rights, security measures
+   - Industry Standards: SOC 2, HIPAA, PCI-DSS as applicable
+   - Generate compliance checklist with pass/fail status
+   - Identify any compliance gaps requiring attention
+
+4. EXECUTIVE SUMMARY PHASE:
+   Create business-focused summary:
+   - Key contract terms and financial implications
+   - High-priority risks and recommended actions
+   - Compliance status and outstanding requirements
+   - Negotiation priorities and approval recommendations
+   - Timeline for completion and next steps
+
+OUTPUT FORMAT:
+- Start with comprehensive clause analysis and categorization
+- Provide detailed risk assessment with mitigation strategies
+- Include compliance verification report with specific findings
+- End with executive summary and actionable recommendations
+- Use clear, non-legal language where possible while maintaining accuracy
+
+Focus on practical business implications and actionable recommendations for decision makers.
+```
+
+### 📝 How to Use This Simple Prompt:
+
+1. **Copy the entire prompt above** (from "You are a comprehensive legal..." to the end)
+2. **Paste it into any AI chat interface** (ChatGPT, Claude, Gemini, etc.)
+3. **Replace the bracketed sections** with your specific contract details:
+   - `[TYPE]` → Your document type
+   - `[JURISDICTION]` → Governing law and jurisdiction
+   - `[INDUSTRY]` → Industry sector
+   - `[VALUE]` → Contract value and term
+   - `[CONCERNS]` → Your main areas of concern
+   - `[COMPLIANCE]` → Required regulatory compliance
+4. **Attach or paste your contract text** after the prompt
+5. **Send and get complete legal analysis!**
+
+### 🎯 What You'll Get:
+- ✅ **Contract Analysis** - Complete clause extraction and categorization
+- ✅ **Risk Assessment** - Detailed risk analysis with mitigation strategies
+- ✅ **Compliance Report** - Regulatory compliance verification
+- ✅ **Executive Summary** - Business-focused recommendations
+- ✅ **Negotiation Guide** - Specific recommendations for contract terms
+
+### 💡 Pro Tips for Best Results:
+- Include the full contract text for comprehensive analysis
+- Be specific about your industry and regulatory requirements
+- Mention any particular clauses or terms you're most concerned about
+- Specify your risk tolerance level (conservative/moderate/aggressive)
+- Include any previous negotiation history or preferences
+
+---
+
 ## Notes
 - This workflow provides complete legal document automation from contract receipt to executive approval
 - Automated clause extraction and risk identification accelerate legal review processes
 - Multi-jurisdictional compliance verification ensures regulatory adherence
 - Executive summaries enable efficient decision-making for business stakeholders
 - Audit trails and documentation support compliance and legal defensibility
+- **Simple copy-paste version** makes legal analysis accessible for non-lawyers

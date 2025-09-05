@@ -390,9 +390,107 @@ echo '✅ FDA/EMA regulatory strategy and submission planning'
 echo '✅ Comprehensive R&D project summary with timelines'
 ```
 
+## 🚀 Simple Copy-Paste Prompt for Non-Technical Users
+
+**Just copy-paste this entire prompt into ChatGPT, Claude, or any AI chat interface!**
+
+```
+You are a comprehensive pharmaceutical R&D expert. I need you to design a complete drug development program from discovery to regulatory approval.
+
+DRUG DEVELOPMENT REQUEST:
+Therapeutic Area: [DISEASE - e.g., "Breast Cancer (HER2-positive)"]
+Target Molecule: [MOLECULE - e.g., "Small molecule kinase inhibitor"]
+Development Stage: [STAGE - e.g., "Pre-clinical (Lead optimization)"]
+Regulatory Path: [REGULATORY - e.g., "FDA Accelerated Approval + EMA Conditional MA"]
+Budget: [BUDGET - e.g., "$150M over 7 years"]
+Key Success Criteria: [CRITERIA - e.g., "Improved efficacy, reduced toxicity vs existing treatments"]
+
+STEP-BY-STEP R&D PLANNING:
+
+1. DRUG DISCOVERY PHASE:
+   Conduct computational drug discovery:
+   - Identify and validate molecular targets (proteins, pathways)
+   - Perform virtual screening and molecular docking studies
+   - Analyze structure-activity relationships (SAR)
+   - Predict ADMET properties (absorption, distribution, metabolism, excretion, toxicity)
+   - Assess patent landscape and competitive positioning
+   - Select lead compounds with optimal drug-like properties
+
+2. PRE-CLINICAL DEVELOPMENT PHASE:
+   Design comprehensive pre-clinical studies:
+   - Detailed ADMET profiling and optimization
+   - Pharmacology studies (in vitro and in vivo efficacy)
+   - Toxicology assessment (acute, chronic, organ-specific)
+   - Manufacturing process development and scale-up
+   - IND-enabling studies and regulatory documentation
+
+3. CLINICAL DEVELOPMENT PHASE:
+   Design phase-appropriate clinical trials:
+   - Phase 1: Safety, PK/PD, dose escalation (20-100 subjects)
+   - Phase 2: Proof-of-concept, optimal dose (100-300 subjects)
+   - Phase 3: Registration, comparator vs placebo (300-3000 subjects)
+   - Statistical analysis plans and power calculations
+   - Patient recruitment strategies and inclusion/exclusion criteria
+
+4. REGULATORY STRATEGY PHASE:
+   Develop comprehensive regulatory approach:
+   - FDA: Accelerated approval, breakthrough therapy designation
+   - EMA: Conditional marketing authorization, PRIME scheme
+   - Global regulatory harmonization and parallel development
+   - Market access planning and health technology assessment
+   - Post-approval pharmacovigilance and lifecycle management
+
+5. PROJECT MANAGEMENT PHASE:
+   Create detailed project plan:
+   - Timeline with critical path and milestones
+   - Budget allocation and resource requirements
+   - Risk assessment and mitigation strategies
+   - Go/no-go decision criteria at each phase
+   - Success metrics and key performance indicators
+
+OUTPUT FORMAT:
+- Start with target identification and drug discovery results
+- Provide detailed pre-clinical development strategy
+- Include clinical trial protocols and statistical analysis plans
+- End with regulatory strategy and market access planning
+- Add comprehensive project timeline and risk assessment
+
+Focus on scientific rigor, regulatory compliance, and commercial viability throughout the development program.
+```
+
+### 📝 How to Use This Simple Prompt:
+
+1. **Copy the entire prompt above** (from "You are a comprehensive pharmaceutical..." to the end)
+2. **Paste it into any AI chat interface** (ChatGPT, Claude, Gemini, etc.)
+3. **Replace the bracketed sections** with your specific drug development details:
+   - `[DISEASE]` → Target disease or condition
+   - `[MOLECULE]` → Type of molecule (small molecule, biologic, etc.)
+   - `[STAGE]` → Current development stage
+   - `[REGULATORY]` → Desired regulatory pathway
+   - `[BUDGET]` → Available funding and timeline
+   - `[CRITERIA]` → Key success factors
+4. **Send and get complete R&D strategy!**
+
+### 🎯 What You'll Get:
+- ✅ **Drug Discovery Plan** - Target identification and lead optimization
+- ✅ **Pre-clinical Strategy** - Safety and efficacy studies design
+- ✅ **Clinical Trial Protocols** - Phase-appropriate study designs
+- ✅ **Regulatory Strategy** - FDA/EMA approval pathways
+- ✅ **Project Timeline** - Milestones and critical path analysis
+
+### 💡 Pro Tips for Best Results:
+- Be specific about the disease target and patient population
+- Include any existing data or compounds you want to build upon
+- Mention specific regulatory preferences (accelerated approval, orphan drug, etc.)
+- Specify budget constraints and timeline requirements
+- Include any particular therapeutic advantages you want to achieve
+
+---
+
 ## Notes
 - This workflow provides complete pharmaceutical R&D pipeline automation from drug discovery to regulatory approval
 - Computational methods accelerate early-stage drug discovery and optimization
 - Integrated regulatory strategy ensures efficient path to market approval
 - Risk-based decision making at each development stage optimizes resource allocation
 - Comprehensive documentation supports regulatory submissions and investor communications
+- **Simple copy-paste version** makes drug development planning accessible for non-scientists
