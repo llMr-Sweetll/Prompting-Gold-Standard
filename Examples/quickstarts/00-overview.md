@@ -27,11 +27,24 @@ This folder contains copy-pasteable quickstarts that chain retrieval-augmented g
 - JSON Schemas: `JSON-Schemas/prompt-eval-rubric.json`, `JSON-Schemas/data-analysis-report.json`.
 
 ## Quickstart Index
+
+### Original Workflows
 - `rag-rubric-docs.md`: RAG answer → rubric evaluation → research brief.
 - `academic-paper-rag-latex-zotero.md`: RAG → Overleaf-safe LaTeX → Zotero TODO.
 - `data-analysis-report-and-charts.md`: Analysis plan → results JSON → Vega-Lite charts.
 - `kb-graph-update.md`: Entities/relations graph → trust scores → update plan.
 - `ci-eval-github-actions.md`: Wire evaluation into CI with JSON artifacts.
 - `local-ollama.md`: Run the RAG → Eval → Doc flow locally with Ollama.
+
+### Phase 1 Expansion: Industry-Specific Workflows
+- `scientific-research-pipeline.md`: Hypothesis → Experiment Design → Data Analysis → Publication
+- `business-intelligence-suite.md`: Market Analysis → Competitive Intelligence → Strategy Reports
+- `software-development-chain.md`: Requirements → Architecture → Implementation → Testing
+
+### Coming Soon (Phase 2)
+- Content Creation Workflow: Research → Outline → Draft → SEO Optimization
+- Legal Document Automation: Contract Analysis → Risk Assessment → Compliance Review
+- Healthcare R&D Pipeline: Drug Discovery → Clinical Trial Design → Regulatory Strategy
+- Financial Services Suite: Risk Assessment → Fraud Detection → Investment Research
 
 Tip: Each guide writes outputs to files in the current directory for easy inspection and versioning. Prefer the “one-block” sections to run the entire flow in a single paste.
